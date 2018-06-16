@@ -1,0 +1,29 @@
+
+					原生js								jquery
+
+浏览器窗口可视区域高度 			document.documentElement.clientHeight				$(window).height()
+浏览器窗口可视区域宽度 			document.documentElement.clientWidth				$(window).width()
+
+文档高度 				document.documentElement.scrollHeight				$(document).height()
+文档宽度 				document.documentElement.scrollWidth				$(document).width()
+	
+滚动条top				document.documentElement.scrollTop||document.body.scrollTop  	$(window).scrollTop() 
+滚动条left				document.documentElement.scrollLeft||document.body.scrollLeft  	$(window).scrollLeft()
+
+DOM元素高度(style.height)		getComputedStyle(elm,null).height				$(elm).height()
+DOM元素宽度(style.width)		getComputedStyle(elm,null).width				$(elm).width()
+
+DOM元素高度（含边框线）			elm.offsetHeight						$(elm).outerHeight()		
+DOM元素宽度（含边框线）			elm.offsetWidth							$(elm).outerWidth()
+
+DOM元素内容实际高度（不受overflow影响）	elm.scrollHeight						$(elm).prop("scrollHeight")
+DOM元素内容实际宽度（不受overflow影响）	elm.scrollWidth							$(elm).prop("scrollWidth") 
+
+DOM元素内部高度（受overflow影响）	elm.clientHeight						$(elm).innerHeight()		
+DOM元素内部宽度（受overflow影响）	elm.clientWidth							$(elm).innerWidth()
+
+DOM元素相对于定位父级top		elm.offsetTop							$(elm).position().top
+DOM元素相对于定位父级left		elm.offsetLeft							$(elm).position().left
+	
+DOM元素相对于文档top			无								$(elm).offset().top
+DOM元素相对于文档left			无								$(elm).offset().left
