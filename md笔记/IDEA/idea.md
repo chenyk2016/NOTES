@@ -12,10 +12,10 @@
 ![11](img/JDK.png)<br>
 
 ## jDK版本错误时
-更改以下3个位置的JDK配置 <\br><\br>
-![](./img/jdk_error_1.png) <\br>
-![](./img/jdk_error_2.png) <\br>
-![](./img/jdk_error_3.png) <\br>
+更改以下3个位置的JDK配置 <br><br>
+![](./img/jdk_error_1.png) <br>
+![](./img/jdk_error_2.png) <br>
+![](./img/jdk_error_3.png) <br>
 
 ## 配置
 导入eclipse项目
@@ -29,17 +29,17 @@
 
 
 ## 快捷键
-* [快捷键](./shortcut.dm#快捷键)
+* [快捷键](./shortcut.md#快捷键)
 
-* [git集成](./shortcut.dm#git集成)
+* [git集成](./shortcut.md#git集成)
 
-* [关联](./shortcut.dm#关联)
+* [关联](./shortcut.md#关联)
 
-* [调试](./shortcut.dm#调试)
+* [调试](./shortcut.md#调试)
 
-* [文件操作](./shortcut.dm#文件操作)
+* [文件操作](./shortcut.md#文件操作)
 
-* [查看结构图](./shortcut.dm#查看结构图)
+* [查看结构图](./shortcut.md#查看结构图)
 
  show the tool window buttons just for a moment. To do that, press the key 
 
