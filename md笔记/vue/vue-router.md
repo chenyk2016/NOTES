@@ -1,8 +1,10 @@
 #vue-router
 
 路由变量
-
+    
+    1:
     router.push({ path: `/user/${userId}` }) // -> /user/123
+    2:
     router.push({ path: '/user/'+userId }) // -> /user/123
 
 
