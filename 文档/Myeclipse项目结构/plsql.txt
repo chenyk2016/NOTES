@@ -1,0 +1,157 @@
+
+获取指定条数据
+select * from PM.PM_CLOUD_SOLUTION where rownum <= 2
+
+==================================
+人员信息
+	select *  from PMDSS.SC_LOGIN_USER;
+自营产品
+	select *  from PM.PM_CLOUD_SOLUTION;
+
+===================================
+循环查询：
+industry_no
+查出需要循环的数据
+select industry_no  from PM.PM_CLOUD_SOLUTION;
+
+
+    select * from
+      (
+          select  u.flow_id, wm_concat( u.industry_no ), wm_concat( u.industry_name )
+          from (
+              select t1.flow_id, t2.* from(
+                    with temp0 as (select LEVEL lv from dual CONNECT BY LEVEL <= 100)
+                    select 
+                          substr(t.vals, instr(t.vals, ',', 1, tv.lv) + 1,
+                          instr(t.vals, ',', 1, tv.lv + 1) - (instr(t.vals, ',', 1, tv.lv) + 1)) AS name,
+                          flow_id
+                          
+                    from (
+                         select ','|| INDUSTRY_NO || ',' AS vals,
+                                     
+                                length(INDUSTRY_NO || ',') - nvl(length(REPLACE(INDUSTRY_NO, ',')), 0) AS cnt,
+                                flow_id
+                                
+                         from PM.PM_CLOUD_CO_PRODUCT b 
+                    ) t
+                    join temp0 tv on tv.lv <= t.cnt
+                    order by 1
+              ) t1,
+              PMDEV.PMDEV_CLOUD_INDUSTRY t2 
+              where t1.name=t2.industry_no
+         ) u
+          group by u.flow_id
+      ) v
+    
+    inner join PM.PM_CLOUD_CO_PRODUCT w on w.flow_id=v.flow_id
+
+
+
+===============================
+选取前三条数据：
+select *  from PM.PM_CLOUD_SOLUTION where ROWNUM <= 3;
+
+==============================
++电话
+select s.login_id, u.MOBILE_PHONE  from PM.PM_CLOUD_SOLUTION s
+inner join PMDSS.SC_LOGIN_USER u  on s.login_id= u.LOGIN_ID ;
+
+====================
+select s.login_id ,s.LOGIN_NAME,s.solution_name, s.Industry_No, s.Scene_No, s.Solution_Desc, s.Self_Ty_Link, s.Self_Flow_Id, s.Co_Flow_Id, s.Beizhu, u.MOBILE_PHONE  from PM.PM_CLOUD_SOLUTION s
+inner join PMDSS.SC_LOGIN_USER u  on s.login_id= u.LOGIN_ID ;
+
+
+=================================
+三表链接查询1：
+
+select s.flow_id ,s.LOGIN_NAME,s.solution_name, u.MOBILE_PHONE 
+from PM.PM_CLOUD_SOLUTION s
+
+inner join PMDSS.SC_LOGIN_USER u  on s.login_id= u.LOGIN_ID 
+
+inner join PM.PM_CLOUD_SELF_PRODUCT p on s.login_name=p.login_name;
+where ROWNUM <= 10
+
+
+===================================
+三表链接查询2：子查询
+
+
+
+
+二表查询：
+select s.fl s.LOGIN_ID , s.MOBILE_PHONE from PMDSS.SC_LOGIN_USER s
+where s.LOGIN_ID in (select LOGIN_ID  from PM.PM_CLOUD_SOLUTION );
+
+===================================
+更改表数据
+select * from -- for undate
+
+================================
+行业分类
+    select * from
+      (
+          select  u.flow_id, wm_concat( u.industry_no ), wm_concat( u.industry_name ) industry_name
+          from (
+              select t1.flow_id, t2.* from(
+                    with temp0 as (select LEVEL lv from dual CONNECT BY LEVEL <= 100)
+                    select 
+                          substr(t.vals, instr(t.vals, ',', 1, tv.lv) + 1,
+                          instr(t.vals, ',', 1, tv.lv + 1) - (instr(t.vals, ',', 1, tv.lv) + 1)) AS name,
+                          flow_id
+                          
+                    from (
+                         select ','|| INDUSTRY_NO || ',' AS vals,
+                                     
+                                length(INDUSTRY_NO || ',') - nvl(length(REPLACE(INDUSTRY_NO, ',')), 0) AS cnt,
+                                flow_id
+                                
+                         from PM.PM_CLOUD_SOLUTION b 
+                    ) t
+                    join temp0 tv on tv.lv <= t.cnt
+                    order by 1
+              ) t1,
+              PMDEV.PMDEV_CLOUD_INDUSTRY t2 
+              where t1.name=t2.industry_no
+         ) u
+          group by u.flow_id
+      ) v
+    
+    inner join PM.PM_CLOUD_SOLUTION w on w.flow_id=v.flow_id
+
+
+---------------
+场景分类
+    select * from
+      (
+          select  u.flow_id, wm_concat( u.scene_no ), wm_concat( u.scene_name ) industry_name
+          from (
+              select t1.flow_id, t2.* from(
+                    with temp0 as (select LEVEL lv from dual CONNECT BY LEVEL <= 100)
+                    select 
+                          substr(t.vals, instr(t.vals, ',', 1, tv.lv) + 1,
+                          instr(t.vals, ',', 1, tv.lv + 1) - (instr(t.vals, ',', 1, tv.lv) + 1)) AS name,
+                          flow_id
+                          
+                    from (
+                         select ','|| scene_no || ',' AS vals,
+                                     
+                                length(scene_no || ',') - nvl(length(REPLACE(SCENE_no, ',')), 0) AS cnt,
+                                flow_id
+                                
+                         from PM.PM_CLOUD_SOLUTION b 
+                    ) t
+                    join temp0 tv on tv.lv <= t.cnt
+                    order by 1
+              ) t1,
+             PMDEV.PMDEV_CLOUD_SCENE t2 
+              where t1.name=t2.scene_no
+         ) u
+          group by u.flow_id
+      ) v
+    
+    inner join PM.PM_CLOUD_SOLUTION w on w.flow_id=v.flow_id
+
+
+
+

@@ -1,0 +1,126 @@
+ORACLR_CONNECTION_DATA =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1521))
+    )
+    (CONNECT_DATA =
+      (SID = CLRExtProc)
+      (PRESENTATION = RO)
+    )
+  )
+
+ORCL =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = orcl)
+    )
+  )
+uoptestdb=
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 132.77.255.104)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = uoptestdb)
+    )
+  )
+10.0.93.160=
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = 10.0.93.160)(PORT = 1521))
+    (CONNECT_DATA =
+     (SERVER = DEDICATED)
+     (SERVICE_NAME = kai)
+   )
+ ) 
+yzh =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 10.0.93.160)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = kai)
+    )
+  )
+epm_our =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 10.0.93.169)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = orcl)
+    )
+  )  
+pure164=
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 132.35.224.164)(PORT = 8029))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = orcl)
+    )
+  )
+tyyydb=
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 132.77.53.46)(PORT = 1526))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = tyyydb)
+    )
+  )
+dwtest1 = 
+  (DESCRIPTION = 
+    (ADDRESS = (PROTOCOL = TCP)(HOST = 132.35.224.165)(PORT = 1521)) 
+       (CONNECT_DATA = 
+       (SERVER = DEDICATED) 
+       (SERVICE_NAME = dwtest) 
+       (INSTANCE_NAME = dwtest1) 
+   ) 
+)
+JFCS =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = 134.81.5.154)(PORT = 1523))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = jfcs)
+    )
+  )
+  
+87_odsdb11_dss =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 134.78.11.170)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SID = odsdb11@b64>>d2VuOmN1aWZ1eXVhbkBkc3NAMTM0Ljc4LjIuODc6MTUyMUBvZHNkYjExCU5PUk1BTAlTSUQJCU9SQUNMRQ==)
+    )
+  )
+
+JFCS34 =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = 134.78.3.34)(PORT = 8895))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = ODSTEST34)
+    )
+  )  
+PROD =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 134.81.5.131)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = prod)
+    )
+  )
+JFCSdzs =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = 134.81.5.154)(PORT = 1523))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = jfcs)
+    )
+  )

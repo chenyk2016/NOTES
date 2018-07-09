@@ -1,0 +1,90 @@
+打开url
+http://localhost:8080/pms-wap/pages/mobile/actionSh/building/order/order.jsp
+
+
+-------------------------------------
+基本结构：
+
+jsp-->页面
+接口-->java
+sql-->.xml
+sqlmap-config.xml-->SQL配置文件
+
+---------------------------------
+java获取前台参数：
+
+定义相同名称的变量，设定get和set
+
+--------------------------------
+调用名称：
+
+命名空间+函数名
+
+--------------------------------
+快捷键：
+提示：alt+/
+
+
+
+------------------------------
+调试：
+
+调试程序：main
+public static void main(String[] args) {
+    
+}
+
+打印到控制台：System.out.println();
+
+----------------------------
+SQl返回数据类型:
+单个数据：string： 
+	查询：queryForObject()
+	接受：String 变量名  = (String) queryForObject()
+	     需要强制转换为String
+	SQL返回： resultClass="java.lang.String"
+
+多个数据：List:
+	查询：queryForList || queryForPagiList
+	接受：List
+	SQL返回：resultClass="java.util.HashMap"
+
+
+------------------------------------------------------
+java调用SQL：
+
+list:
+
+1.List data=daoHelper.queryForList("latent.building.buildMapList",this);
+2.
+JSONArray positlist = new JSONArray();
+positlist = JSONArray.fromObject(this.daoHelper.queryForList("latent.building.selectpositListSelfUndo", this));
+
+-------------------------------------
+java 接口返回值
+
+原生:(会压缩代码，在页面打开会乱码)
+JSONUtilsNew.writeToMobile(jsonObject, response);
+
+h5：
+JSONUtilsNew.writeToMobileH5(jsonObject, response);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
