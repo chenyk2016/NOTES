@@ -18,7 +18,7 @@
 有些插件国内下载不了，可以配置http代理。
 修改Android SDK manager界面中`tools>options`然后修改成这样`HTTP Proxy ：mirrors.neusoft.edu.cn` 和` HTTP Proxy Port:80`
 注意：地址可能会失效，可以百度一个新的试试
-![SdkManager](img/SdkManager.PNG)
+![SdkManager](img/SdkManager.png)
 
 ## 2. 搭建好环境之后(adb需要可用)配置模拟器。
 ### 2.1 解决 SDK的adb版本和夜神的adb版本不一样
@@ -55,27 +55,27 @@
 
 `react-native init AwesomeProject`之后会生成一个新的目录
 
-![目录](img/init.PNG)
+![目录](img/init.png)
 
 `react-native run-android`之后会新打开一个命令行窗口，为packager服务
 
 ![packager服务](img/nodeServer.png)
 
 夜深模拟器会有一个APP
-![APP](img/startApp.PNG)
+![APP](img/startApp.png)
 
 打开APP之后会有一个红屏页面，因为还没配置访问pc端的packager服务。
-![APP启动红屏页面](img/appRed.PNG)
+![APP启动红屏页面](img/appRed.png)
 
 点击右上角的震动按钮打开调试窗口
-![调试窗口](img/devBtn.PNG)
+![调试窗口](img/devBtn.png)
 
 点击`Dev settings` 进去之后点击 `Debug server host & port for device`配置端口
 输入本机的局域网IP加:8081
-![配置端口](img/port.PNG)
+![配置端口](img/port.png)
 
 确定之后返回重启APP
-![APP启动页面](img/startPage.PNG)
+![APP启动页面](img/startPage.png)
 
 [参考文档-在windows下搭建react-native-android开发环境](http://bbs.reactnative.cn/topic/10/%E5%9C%A8windows%E4%B8%8B%E6%90%AD%E5%BB%BAreact-native-android%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/2)
 
