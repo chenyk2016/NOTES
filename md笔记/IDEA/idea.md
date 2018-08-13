@@ -26,6 +26,8 @@
 3. 配置Tomcat
 4. 导入jar包
 
+5. 忽略node_modules文件夹
+just add node_modules to 'Ignore files and folders' list in Settings/Editor/File types
 
 
 ## 快捷键
@@ -41,7 +43,7 @@
 
 * [查看结构图](./shortcut.md#查看结构图)
 
- show the tool window buttons just for a moment. To do that, press the key 
+ show the tool window buttons just for a moment. To do that, press the key
 
 
 ## plugins
