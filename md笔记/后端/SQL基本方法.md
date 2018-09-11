@@ -19,7 +19,7 @@
     decode(列名, 条件1, 结果1, 结果2 )
 ####  with ... as a  select ... from a
 #### replace('data', '要被替换的字符' , '替换的字符')
-    
+
 
 
 
@@ -29,7 +29,7 @@
     ~~~
 
 #### 正式库数据导入测试库
-    insert into   PM.pm_jx_lev2_ser_actual 
+    insert into   PM.pm_jx_lev2_ser_actual
     select * from PM.pm_jx_lev2_ser_actual@TO_JFPM T WHERE t.acct_month='201709'
 
 #### 复制表（+用户赋权）
@@ -39,6 +39,9 @@
     grant all on  ndm.DM_APP_MB_CHARGE_FLUX_D  to kepler_bae;
 
 #### 操作表数据
+    ```
+    select t.*, t.rowid from 表 t;
+    ```
     选择之后添加`for update`
     更新之后注意：一定要提交，不然会锁表
 
@@ -49,5 +52,3 @@
     --删除数据
     delete tableName;
 ~~~
-
-
