@@ -1,29 +1,29 @@
 
-					Ô­Éújs								jquery
+					åŸç”Ÿjs								jquery
 
-ä¯ÀÀÆ÷´°¿Ú¿ÉÊÓÇøÓò¸ß¶È 			document.documentElement.clientHeight				$(window).height()
-ä¯ÀÀÆ÷´°¿Ú¿ÉÊÓÇøÓò¿í¶È 			document.documentElement.clientWidth				$(window).width()
+æµè§ˆå™¨çª—å£å¯è§†åŒºåŸŸé«˜åº¦ 			window.innerHeight(å«æ»šåŠ¨æ¡)||document.documentElement.clientHeight				$(window).height()
+æµè§ˆå™¨çª—å£å¯è§†åŒºåŸŸå®½åº¦ 			window.innerWidth||document.documentElement.clientWidth				$(window).width()
 
-ÎÄµµ¸ß¶È 				document.documentElement.scrollHeight				$(document).height()
-ÎÄµµ¿í¶È 				document.documentElement.scrollWidth				$(document).width()
-	
-¹ö¶¯Ìõtop				document.documentElement.scrollTop||document.body.scrollTop  	$(window).scrollTop() 
-¹ö¶¯Ìõleft				document.documentElement.scrollLeft||document.body.scrollLeft  	$(window).scrollLeft()
+æ–‡æ¡£é«˜åº¦ 				document.documentElement.scrollHeight				$(document).height()
+æ–‡æ¡£å®½åº¦ 				document.documentElement.scrollWidth				$(document).width()
 
-DOMÔªËØ¸ß¶È(style.height)		getComputedStyle(elm,null).height				$(elm).height()
-DOMÔªËØ¿í¶È(style.width)		getComputedStyle(elm,null).width				$(elm).width()
+æ»šåŠ¨æ¡top				document.documentElement.scrollTop||document.body.scrollTop  	$(window).scrollTop()
+æ»šåŠ¨æ¡left				document.documentElement.scrollLeft||document.body.scrollLeft  	$(window).scrollLeft()
 
-DOMÔªËØ¸ß¶È£¨º¬±ß¿òÏß£©			elm.offsetHeight						$(elm).outerHeight()		
-DOMÔªËØ¿í¶È£¨º¬±ß¿òÏß£©			elm.offsetWidth							$(elm).outerWidth()
+DOMå…ƒç´ é«˜åº¦(style.height)		getComputedStyle(elm,null).height				$(elm).height()
+DOMå…ƒç´ å®½åº¦(style.width)		getComputedStyle(elm,null).width				$(elm).width()
 
-DOMÔªËØÄÚÈİÊµ¼Ê¸ß¶È£¨²»ÊÜoverflowÓ°Ïì£©	elm.scrollHeight						$(elm).prop("scrollHeight")
-DOMÔªËØÄÚÈİÊµ¼Ê¿í¶È£¨²»ÊÜoverflowÓ°Ïì£©	elm.scrollWidth							$(elm).prop("scrollWidth") 
+DOMå…ƒç´ é«˜åº¦ï¼ˆå«è¾¹æ¡†çº¿ï¼‰			elm.offsetHeight						$(elm).outerHeight()
+DOMå…ƒç´ å®½åº¦ï¼ˆå«è¾¹æ¡†çº¿ï¼‰			elm.offsetWidth							$(elm).outerWidth()
 
-DOMÔªËØÄÚ²¿¸ß¶È£¨ÊÜoverflowÓ°Ïì£©	elm.clientHeight						$(elm).innerHeight()		
-DOMÔªËØÄÚ²¿¿í¶È£¨ÊÜoverflowÓ°Ïì£©	elm.clientWidth							$(elm).innerWidth()
+DOMå…ƒç´ å†…å®¹å®é™…é«˜åº¦ï¼ˆä¸å—overflowå½±å“ï¼‰	elm.scrollHeight						$(elm).prop("scrollHeight")
+DOMå…ƒç´ å†…å®¹å®é™…å®½åº¦ï¼ˆä¸å—overflowå½±å“ï¼‰	elm.scrollWidth							$(elm).prop("scrollWidth")
 
-DOMÔªËØÏà¶ÔÓÚ¶¨Î»¸¸¼¶top		elm.offsetTop							$(elm).position().top
-DOMÔªËØÏà¶ÔÓÚ¶¨Î»¸¸¼¶left		elm.offsetLeft							$(elm).position().left
-	
-DOMÔªËØÏà¶ÔÓÚÎÄµµtop			ÎŞ								$(elm).offset().top
-DOMÔªËØÏà¶ÔÓÚÎÄµµleft			ÎŞ								$(elm).offset().left
+DOMå…ƒç´ å†…éƒ¨é«˜åº¦ï¼ˆå—overflowå½±å“ï¼‰	elm.clientHeight						$(elm).innerHeight()
+DOMå…ƒç´ å†…éƒ¨å®½åº¦ï¼ˆå—overflowå½±å“ï¼‰	elm.clientWidth							$(elm).innerWidth()
+
+DOMå…ƒç´ ç›¸å¯¹äºå®šä½çˆ¶çº§top		elm.offsetTop							$(elm).position().top
+DOMå…ƒç´ ç›¸å¯¹äºå®šä½çˆ¶çº§left		elm.offsetLeft							$(elm).position().left
+
+DOMå…ƒç´ ç›¸å¯¹äºæ–‡æ¡£top			æ— 								$(elm).offset().top
+DOMå…ƒç´ ç›¸å¯¹äºæ–‡æ¡£left			æ— 								$(elm).offset().left

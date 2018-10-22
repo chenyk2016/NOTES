@@ -6,10 +6,11 @@
 *
 
 ## 安装
-1.安装时选择下载JRE <br>
+1. 安装时选择下载JRE <br>
 ![11](img/start.png)<br>
-2.下载JDK安装 <br>
+2. 下载JDK安装 <br>
 ![11](img/JDK.png)<br>
+3. 安装tomcta
 
 ## jDK版本错误时
 更改以下3个位置的JDK配置 <br><br>

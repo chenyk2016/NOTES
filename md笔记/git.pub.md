@@ -6,20 +6,31 @@
 
 创建 git 仓库:
 
-    mkdir gittest
-    cd gittest
-    git init
-    touch README.md
-    git add README.md
-    git commit -m "first commit"
-    git remote add origin [url]
-    git push -u origin master
+    $ mkdir gittest
+    $ cd gittest
+    $ git init
+    $ touch README.md
+    $ git add README.md
+    $ git commit -m "first commit"
+    $ git remote add origin [url]
+    $ git push -u origin master
 
 将已有项目关联上传远程库
 
-    cd existing_git_repo
-    git remote add origin [url]
-    git push -u origin master
+    $ cd existing_git_repo
+    $ git remote add origin [url]
+    $ git push -u origin master
+
+获取分支，与当前比较不同，并合并
+
+```bash
+# 获取develope，并储存在temp分支中
+git fetch origin develope:temp
+
+git diff
+# temp分支与当前合并
+git merge temp
+```
 
 
 ### Git 全局设置:
@@ -132,12 +143,12 @@
 ### 更新代码
 
     # 取回远程仓库的变化，并与本地分支合并
-    git pull
+    $ git pull
 
     # 上传本地指定分支到远程仓库
     $ git push [remote] [branch]
 
-    $ git fetch origin
+    $ git fetch origin [originBranch:newBranch]
     $ git merge origin/next
 
 ### 增加删除
@@ -282,6 +293,22 @@
 
     # 生成一个可供发布的压缩包
     $ git archive
+
+### 项目迁移
+
+    # 先克隆仓库
+    # --bare 创建的克隆版本库都不包含工作区，直接就是版本库的内容。
+    $ git clone --bare git://gitlab.com/test/bak.git
+
+    # 移除关联的名为origin的远程仓库
+    $ git remote rm origin
+
+    # 关联新的远程仓库
+    $ git remote add gitee git@gitee.com:**/**.git
+
+    # 仓库镜像上传, 将仓库和版本记录上传
+    $ git push --mirror git@newpath/test/new.git
+
 
 ### 推荐阅读和参考：
 [阮一峰-常用 Git 命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
