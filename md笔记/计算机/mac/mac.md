@@ -23,6 +23,13 @@
   # 恢复.DS_store生成：
   defaults delete com.apple.desktopservices DSDontWriteNetworkStores
 ```
+### ssh报错
+
+  no matching cipher found. Their offer: aes128-cbc,3des-cbc,blowfish-cbc,ca
+  st128-cbc,arcfour,aes192-cbc,aes256-cbc,rijndael-cbc@lysator.liu.se
+  
+  https://discussions.apple.com/message/32769748#32769748
+
 
 ## mac 命令行
 

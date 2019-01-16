@@ -27,3 +27,9 @@ create-react-app 是官方提供的工程化方案，集成常用的配置工具
     ├── package.json
     ├── README.md
     └── yarn.lock
+
+#### 创建工程
+
+    npx create-react-app my-app
+    npx react-scripts my-app
+    react-scripts
