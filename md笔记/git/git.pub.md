@@ -3,6 +3,9 @@
 分布式版本控制系统
 
 ## 简易的命令行入门教程:
+克隆仓库:
+
+    $ git clone url
 
 创建 git 仓库:
 
@@ -130,6 +133,8 @@ git merge temp
 
     $ git push [-u] '远程名称' '分支名称'
 
+    $ git push <远程仓库名> <本地分支名>:<远程分支名>
+
     # 强制提交
     $ git push -f origin master
 
@@ -186,6 +191,9 @@ git merge temp
     # 新建一个分支，并切换到该分支
     $ git checkout -b [branch]
 
+    # 从某个分支或commit新建一个分支，并切换到该分支
+    $ git checkout [oldbranch|commitId] -b [branch]
+
     # 新建一个分支，与指定的远程分支建立追踪关系
     $ git branch --track [branch] [remote-branch]
 
@@ -204,12 +212,15 @@ git merge temp
     # 选择一个commit，合并进当前分支
     $ git cherry-pick [commit]
 
-    # 删除分支
+    # 删除分支 需要在别的分支上才能删除
     $ git branch -d [branch-name]
 
     # 删除远程分支
     $ git push origin --delete [branch-name]
     $ git branch -dr [remote/branch]
+
+    # 修改分支名称
+    $ git branch -m [oldName] [newName]
 
 ### 标签
 

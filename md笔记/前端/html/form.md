@@ -1,4 +1,5 @@
 
+
 1. FormData
 
 FormData里的数据一类似于私有属性的方式储存，

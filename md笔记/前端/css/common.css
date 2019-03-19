@@ -1,0 +1,31 @@
+
+/*移动端初始化*/
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+*{ margin: 0 ;padding: 0; }
+html{ font-size: 100px; font-family: sans-serif;}
+body{ font-size: .12rem; width: 100vw;}
+a{ text-decoration: none; }
+a:link{ color: #000; }
+a:visited{ color: #000; }
+a:hover{ color: #000; }
+a:active{ color: #000; }
+li{ list-style: none; }
+
+/*公共类*/
+.hidden{ display: none; }
+.phone_num:link{ color: #f5d292; }
+.clear:after{ content: ""; display: block; height: 0; clear: both; }
+.fl{ float: left; }
+.fr{ float: right; }
+
+
+
+
+
+
+
+
+
+
+
