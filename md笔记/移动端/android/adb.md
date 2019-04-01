@@ -4,16 +4,28 @@
 adb即Android Debug Bridge（安卓调试桥）。它就是一个命令行窗口，用于通过电脑端与模拟器或者真是设备交互。
 
 ### 常用命令
+```py
+# 列出可用设备
 
-    # 列出可用设备
-    $ adb devices
+$ adb devices
 
-    # 通过ip地址链接设备
-    $ adb connect <device-ip-address>
+# 关闭服务
+$ adb kill-server  
 
-    # 断开连接
-    $ adb disconnect <device-ip-address>
+# 启动服务
+$ adb start-server  
 
+# 通过ip地址链接设备
+$ adb connect <device-ip-address>
+
+# 断开连接
+$ adb disconnect <device-ip-address>
+```
+
+### 安卓模拟器调试-连接不到时
+1. 试试`adb devices`
+2. 不行再试试先`adb kill-server` 再 `adb start-server`
+3. 试试`adb connect ip:端口`
 
 **常用模拟器端口**
 
