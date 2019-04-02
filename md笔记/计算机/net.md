@@ -8,7 +8,7 @@
 	# 关闭
 	netsh wlan stop hostednetwork 命令来关闭wifi
 	// 命令设置wifi名称和密码
-	netsh wlan set hostednetwork mode=allow ssid=winpc key=qwertyuiop 
+	netsh wlan set hostednetwork mode=allow ssid=winpc key=qwertyuiop
 	```
 
 1、用shutdown -s -t 60          （60表示60秒，可以自行设定）

@@ -41,8 +41,8 @@
     npm install --save babel-polyfill
     import 'babel-polyfill';
     ~~~
-    
-* `<keep-alive include='a'></keep-alive>`筛选的是组件名称。不是路由的 
+
+* `<keep-alive include='a'></keep-alive>`筛选的是组件名称。不是路由的
 
 
 
@@ -62,10 +62,10 @@
 
 **解决办法：**
 应该将点击和滑动事件，绑定到`date_mm`元素的父级上
-
-    var date_yy = _self.gearDate.querySelector(".date_yy").parentElement;
-    var date_mm = _self.gearDate.querySelector(".date_mm").parentElement;
-
+```
+var date_yy = _self.gearDate.querySelector(".date_yy").parentElement;
+var date_mm = _self.gearDate.querySelector(".date_mm").parentElement;
+```
 
 ### 如何构建高复用组件
 **1. 组件内部最好不要使用声明周期钩子函数**
@@ -74,9 +74,15 @@
 * 1. 组件引入时需要用`keep-alive`包含，以保存组件状态，但是又想每次加载组件时都执行某个函数。
     例如：一个筛选组件，希望跳转回页面是，组件保存状态。
     **如何保存组件状态：**
-* 2. 
+* 2.
 
 **2. 如何保存组件状态**
 *  组件名称不变
 
 **3. 页面应和url关联， 断开与其他页面之间的关联。**
+
+### keep-alive使用
+为了可以动态控制组件的缓存，将include动态绑定
+:include=""
+
+### 

@@ -1,11 +1,12 @@
 # 用ReactNative搭建一个安卓APP
+>基于reactnative 0.51
 
 读者须知：本文面向有稍微有基础的前后端开发者，阅读之前需要保证你有【基础的命令行知识】【基础前端知识】。如果你只是想了解大概流程，也可以看下。
 目标：window上搭建android应用
 依据： 本文主要参考根据react native官方文档，来配置搭建环境。
 
 ## 1. 搭建开发环境
-[参考官方文档](https://reactnative.cn/docs/0.51/getting-started.html#content)
+[参考官方文档](https://reactnative.cn/docs/getting-started/)
 安装所有的必需软件
 模拟器装的[夜神模拟器](https://www.yeshen.com/)，没有用官方的。
 注意【将Android SDK的Tools目录添加到PATH变量中】这个步骤一定要做。
@@ -23,12 +24,12 @@
 ## 2. 搭建好环境之后(adb需要可用)配置模拟器。
 ### 2.1 解决 SDK的adb版本和夜神的adb版本不一样
 
-1、先关闭所有adb的进程； 
-2、将电脑中SDK目录下的adb.exe文件，复制到夜神模拟器的目录下(bin目录)，改名为nox_adb.exe（夜神模拟器目录下的adb文件名字叫做nox_adb.exe）。 
+1、先关闭所有adb的进程；
+2、将电脑中SDK目录下的adb.exe文件，复制到夜神模拟器的目录下(bin目录)，改名为nox_adb.exe（夜神模拟器目录下的adb文件名字叫做nox_adb.exe）。
 3、重启模拟器
 
 ### 2.2 配置打开夜神模拟器USB调试模式
-打开夜神模拟器： 
+打开夜神模拟器：
 
 设置>关于平板电脑>版本号。 一直点直到出现提示进入开发者模式。
 返回设置就会出现【开发者选项】
@@ -39,11 +40,18 @@
 
 ### 3.测试是否可以检测到模拟器
 
-    $ adb devices
-    List of devices attached
-    127.0.0.1:62001 device
+```
+$ adb devices
+List of devices attached
+127.0.0.1:62001 device
+```
 
 如果显示以下信息说明检测到了夜神模拟器，没有说明没有检测到，看看上面的哪一步做错了。
+
+或者试试重启adb, 命令行运行以下命令
+先`adb kill-server` 再 `adb start-server`
+
+[adb使用介绍](../android/adb.md)
 
 ## 2. 测试安装。
 
@@ -81,16 +89,10 @@
 
 ## 3. 打包成APK文件
 
-[参考官方文档](https://reactnative.cn/docs/0.51/signed-apk-android.html#content)
+[参考官方文档](https://reactnative.cn/docs/signed-apk-android/)
 按照文档一直做就可以了。
 
 注意以下两点：
 1. my-release-key.keystore密钥库文件在执行命令的当前目录
 2. 添加签名到项目的gradle配置文件时不要漏了`signingConfig signingConfigs.release`。
 ![attention](img/attention.png)
-
-
-
-
-
-

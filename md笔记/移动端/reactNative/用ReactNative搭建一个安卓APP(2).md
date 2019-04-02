@@ -1,4 +1,5 @@
 # 用ReactNative搭建一个安卓APP(2)
+>基于reactnative 0.51
 
 ## 修改APP命称
 更改: android/app/src/main/res/values/strings.xml
