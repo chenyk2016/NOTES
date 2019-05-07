@@ -1,6 +1,6 @@
 # myslq
 
-
+默认端口: 3306
 
 ## 安装
 [视频教程-windows下mysql安装配置](https://www.imooc.com/video/1803)
@@ -164,55 +164,17 @@ log-bin=mysql-bin
         [mysqlhotcopy]  
         interactive-timeout
 ```
+
 3）保存文件
 修改文件读写权限
 ```
 sudo chmod 664 /etc/my.cnf
 ```
+
 4) 安装完成后重启mysql
 
 修改配置文件
 安装目录下my.ini, mac手动创建my.cnf
-
-## mysql启动关闭操作
-```
-# 启动：
-sudo /usr/local/mysql/support-files/mysql.server start
-
-# 关闭
-sudo /usr/local/mysql/support-files/mysql.server stop
-
-# 重启
-sudo /usr/local/mysql/support-files/mysql.server restart
-
-# 进入mysql（要求输入mysql登录密码）
-mysql -u root -p
-
-# 退出mysql
-exit
-
-# 版本号
-mysql --version
-```
-
-## mysql命令
-
-1 数据库简单操作
-（1）创建数据库：create database 数据库名称
-（2）查看数据库：show databases;
-（3）删除数据库：drop database 数据库名称
-（4）打开数据库：use 数据库名称
-
-2 mysql数据表简单操作
-（1）显示某个数据库中的所有表：show tables;
-（2）显示数据表的结构：desc 表名;
-（3）创建数据表：create tabel 表名(字段名称 字段类型, ……);
-（4）添加新列：alter table 列名 add 字段名称 字段类型;
-（5）删除数据表：drop table 表名;
-（6）复制表：create table 新表名 like 被复制表名;
-
-3 修改密码
-SET PASSWORD=PASSWORD('mysql');
 
 ## mysql图形化管理工具-免费的
 1. [DBeave](https://dbeaver.io/docs/)
