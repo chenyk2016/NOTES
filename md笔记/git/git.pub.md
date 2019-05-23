@@ -320,6 +320,13 @@ git merge temp
     # 仓库镜像上传, 将仓库和版本记录上传
     $ git push --mirror git@newpath/test/new.git
 
+### tag
+
+    # 列出tag
+    $ git tag
+
+    # 拉取tag
+    $ git checkout tag
 
 ### 推荐阅读和参考：
 [阮一峰-常用 Git 命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
