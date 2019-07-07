@@ -51,10 +51,24 @@ module.exports = {
     'generator-star-spacing': 'off',
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'vue/no-parsing-error': [2, {
-      'x-invalid-end-tag': false
+    // 标签自闭合规则 always any never  -- 不验证，因为VUE自定义标签，验证不准
+    "vue/html-self-closing": ["error", {
+      "html": {
+        "void": "any",
+        "normal": "any",
+        "component": "any"
+      },
+      "svg": "any",
+      "math": "any"
+    }],
+    "vue/no-parsing-error": [2, {
+      // 无效的闭合标签，因为自定义标签，关闭
+      "x-invalid-end-tag": false,
     }],
     'eqeqeq': "off"
   }
 }
 ```
+
+## 一些问题
+1. 对于 iview的 `Col Input`导致的缩紧警告 ，解决办法是 使用`i-col`

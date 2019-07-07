@@ -1,3 +1,11 @@
+## adb安装
+>(20190626)
+
+### mac平台
+
+  brew cask install android-platform-tools
+
+
 ## adb常用命令记录
 >更新时间（20180822）
 

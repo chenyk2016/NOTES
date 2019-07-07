@@ -43,6 +43,7 @@ git merge temp
 
     # 设置提交代码的用户信息
     $ git config --global user.name "用户名"
+    # 设置了邮箱，会通过邮箱自动关联用户名
     $ git config --global user.email "邮箱"
 
     # 测试连接
