@@ -31,13 +31,18 @@
     npm install iview@1.1.1
 
 
-### 设置淘宝镜像
+### 设置镜像
 
+    // 设置淘宝镜像
     npm config set registry https://registry.npm.taobao.org --global
     npm config set disturl https://npm.taobao.org/dist --global
 
-    npm config set registry http://registry.npmjs.org
+    // 查看设置
+    npm config get registry
+    npm config get disturl
 
+
+    npm config set registry http://registry.npmjs.org
 
 ### mac npm install 错误处理
 

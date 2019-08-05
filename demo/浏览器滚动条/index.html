@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      /*谷歌、safari、qq浏览器、360浏览器滚动条样式*/
+      /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+      /* 设置之后滚动条会占位 */
+      *{
+        /*scrollbar-width: thin;*/
+      }
+      ::-webkit-scrollbar
+      {
+          /* 垂直滚动条，宽度 */
+          width: 0;
+          /* 水平滚动条，高度 */
+          height: 5px;
+          background-color: #F5F5F5;
+          transform: translate(-10px, 0);
+      }
+      /*定义滚动条轨道 内阴影+圆角*/
+      ::-webkit-scrollbar-track
+      {
+          position: relative;
+          width: 0;
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+          border-radius: 10px;
+          background-color: #F5F5F5;
+      }
+      /*定义滑块 内阴影+圆角*/
+      ::-webkit-scrollbar-thumb
+      {
+        width: 0;
+          position: absolute;
+          border-radius: 10px;
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+          background-color: red;
+      }
+      /*滑块效果*/
+      ::-webkit-scrollbar-thumb:hover
+      {
+        border-radius: 5px;
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        background: rgba(0,0,0,0.4);
+      }
+      /*IE滚动条颜色*/
+      html {
+          scrollbar-face-color:#bfbfbf;/*滚动条颜色*/
+          scrollbar-highlight-color:#000;
+          scrollbar-3dlight-color:#000;
+          scrollbar-darkshadow-color:#000;
+          scrollbar-Shadow-color:#adadad;/*滑块边色*/
+          scrollbar-arrow-color:rgba(0,0,0,0.4);/*箭头颜色*/
+          scrollbar-track-color:#eeeeee;/*背景颜色*/
+          /*隐藏滚动条，当IE下溢出，仍然可以滚动*/
+          -ms-overflow-style:none;
+          /*火狐下隐藏滚动条*/
+          overflow:-moz-scrollbars-none;
+      }
+      .box{
+        box-sizing: content-box;
+        height: 300px;
+        width: 600px;
+        border: 1px solid #ccc;
+        background: #eee;
+        overflow: auto;
+        scrollbar-width: thin;
+        position: relative;
+      }
+      .inner{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: -0px;
+        height: 1000px;
+        background: #66b1e2;
+      }
+      p{
+        background: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="inner">
+        <p>mac 上滚动条默认不占位，无轨道，自动消失</p>
+        <p>window 上默认显示滚动条，占位，有轨道</p>
+        <p>设置宽高才能使滚动条其他属性生效</p>
+        <p>但设置宽高后，mac上滚动条也会默认占位，切无法取消</p>
+        <p></p>
+        <p>asdasdmas啊什么打开收到马上，大收到马上代码，。收到吗，。上面的，。啊什么的，。啊什么的，。啊什么的，。啊什么的马上，dmas.dmas，。代码是。，代码，a.sdma，s.dma，。sdm.as，吗的。，sdmcmasdmas,. m,sda,.sdmas 啊什么大。，上面的。，啊什么的，。啊什么的，。啊什么的，。啊什么的马上没电马上代码什么的吗</p>
+        <p>asdasdmas啊什么打开收到马上，大收到马上代码，。收到吗，。上面的，。啊什么的，。啊什么的，。啊什么的，。啊什么的马上，dmas.dmas，。代码是。，代码，a.sdma，s.dma，。sdm.as，吗的。，sdmcmasdmas,. m,sda,.sdmas 啊什么大。，上面的。，啊什么的，。啊什么的，。啊什么的，。啊什么的马上没电马上代码什么的吗</p>
+        <p>asdasdmas啊什么打开收到马上，大收到马上代码，。收到吗，。上面的，。啊什么的，。啊什么的，。啊什么的，。啊什么的马上，dmas.dmas，。代码是。，代码，a.sdma，s.dma，。sdm.as，吗的。，sdmcmasdmas,. m,sda,.sdmas 啊什么大。，上面的。，啊什么的，。啊什么的，。啊什么的，。啊什么的马上没电马上代码什么的吗</p>
+        <p>asdasdmas啊什么打开收到马上，大收到马上代码，。收到吗，。上面的，。啊什么的，。啊什么的，。啊什么的，。啊什么的马上，dmas.dmas，。代码是。，代码，a.sdma，s.dma，。sdm.as，吗的。，sdmcmasdmas,. m,sda,.sdmas 啊什么大。，上面的。，啊什么的，。啊什么的，。啊什么的，。啊什么的马上没电马上代码什么的吗</p>
+        <p>asdasdmas啊什么打开收到马上，大收到马上代码，。收到吗，。上面的，。啊什么的，。啊什么的，。啊什么的，。啊什么的马上，dmas.dmas，。代码是。，代码，a.sdma，s.dma，。sdm.as，吗的。，sdmcmasdmas,. m,sda,.sdmas 啊什么大。，上面的。，啊什么的，。啊什么的，。啊什么的，。啊什么的马上没电马上代码什么的吗</p>
+        <p>asdasdmas啊什么打开收到马上，大收到马上代码，。收到吗，。上面的，。啊什么的，。啊什么的，。啊什么的，。啊什么的马上，dmas.dmas，。代码是。，代码，a.sdma，s.dma，。sdm.as，吗的。，sdmcmasdmas,. m,sda,.sdmas 啊什么大。，上面的。，啊什么的，。啊什么的，。啊什么的，。啊什么的马上没电马上代码什么的吗</p>
+      </div>
+    </div>
+  </body>
+</html>

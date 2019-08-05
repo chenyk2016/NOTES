@@ -1,5 +1,6 @@
 # 用ReactNative搭建一个安卓APP
 >基于reactnative 0.51
+windows 环境
 
 读者须知：本文面向有稍微有基础的前后端开发者，阅读之前需要保证你有【基础的命令行知识】【基础前端知识】。如果你只是想了解大概流程，也可以看下。
 目标：window上搭建android应用
@@ -21,6 +22,9 @@
 注意：地址可能会失效，可以百度一个新的试试
 ![SdkManager](img/SdkManager.png)
 
+2. andirod stutio 安装报错
+https://software.intel.com/android/articles/installation-instructions-for-intel-hardware-accelerated-execution-manager-mac-os-x
+
 ## 2. 搭建好环境之后(adb需要可用)配置模拟器。
 ### 2.1 解决 SDK的adb版本和夜神的adb版本不一样
 
@@ -38,7 +42,7 @@
 打开USB调试
 ![USB调试](img/USBdev.png)
 
-### 3.测试是否可以检测到模拟器
+### 2.3 测试是否可以检测到模拟器
 
 ```
 $ adb devices

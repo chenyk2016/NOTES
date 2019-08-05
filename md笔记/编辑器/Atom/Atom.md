@@ -23,3 +23,7 @@ backup
 # 更新
 restore
 ```
+## 配置
+
+### 显示隐藏文件
+tree

@@ -332,3 +332,26 @@ git merge temp
 ### 推荐阅读和参考：
 [阮一峰-常用 Git 命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
 [廖雪峰-git教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+
+
+
+### 其他相关
+
+~ 会匹配最近的小版本依赖包，比如~1.2.3会匹配所有1.2.x版本，但是不包括1.3.0
+^ 会匹配最新的大版本依赖包，比如^1.2.3会匹配所有1.x.x的包，包括1.3.0，但是不包括2.0.0
+* 这意味着安装最新版本的依赖包
+
+
+### 设置镜像
+
+npm config set registry https://registry.npm.taobao.org --global
+
+npm config set disturl https://npm.taobao.org/dist --global
+
+// 配置后可通过下面方式来验证是否成功
+npm config get registry
+npm config get disturl
+
+// 官方
+npm config set registry https://registry.npmjs.org --global
+npm config set disturl https://nodejs.org/dist/ --global

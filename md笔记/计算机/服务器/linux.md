@@ -20,3 +20,28 @@ scp root@134.70.64.154:/home/boncapp/sjtb.zip ./
 mv /home/boncapp/libr ./
 
 ```
+
+## yum
+
+安装git
+
+  yum install git
+
+
+
+## tar压缩解压缩
+
+```
+# 压缩 gz
+tar -cvf test.tar ./test/
+
+# 解压 gz
+tar -xzvf test.tar
+
+
+# 压缩
+tar -cvf test.tar ./test/
+
+# 解压
+tar -xvf test.tar
+```
