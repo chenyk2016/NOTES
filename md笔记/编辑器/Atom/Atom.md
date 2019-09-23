@@ -1,3 +1,6 @@
+## 快捷键
+
+跳转到某一行 `ctrl+g`
 
 ## 插件
 
@@ -27,3 +30,18 @@ restore
 
 ### 显示隐藏文件
 tree
+
+
+### emmit 支持vue jsx
+keymap 中添加: 
+
+然后重启
+
+```
+'atom-text-editor[data-grammar="text html vue"]:not([mini])':
+    'tab': 'emmet:expand-abbreviation-with-tab'
+    
+'atom-text-editor[data-grammar="source js jsx"]:not([mini])':
+    'tab': 'emmet:expand-abbreviation-with-tab'
+
+```

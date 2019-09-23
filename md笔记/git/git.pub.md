@@ -177,6 +177,9 @@ git merge temp
 
 ### 分支
 
+    # 清除git 远程分支列表缓存
+    git fetch -p
+    
     # 列出所有本地分支
     $ git branch
 
@@ -193,7 +196,7 @@ git merge temp
     $ git checkout -b [branch]
 
     # 从某个分支或commit新建一个分支，并切换到该分支
-    $ git checkout [oldbranch|commitId] -b [branch]
+    $ git checkout originName/[oldbranch|commitId] -b [branch]
 
     # 新建一个分支，与指定的远程分支建立追踪关系
     $ git branch --track [branch] [remote-branch]
