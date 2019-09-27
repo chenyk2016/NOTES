@@ -6,6 +6,8 @@
 克隆仓库:
 
     $ git clone url
+    # 克隆到指定目录
+    $ git clone url [dir]
 
 创建 git 仓库:
 
