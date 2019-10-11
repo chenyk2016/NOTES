@@ -180,7 +180,7 @@ git merge temp
 ### 分支
 
     # 清除git 远程分支列表缓存
-    git fetch -p
+    $ git fetch -p
     
     # 列出所有本地分支
     $ git branch
@@ -191,6 +191,9 @@ git merge temp
     # 列出所有本地分支和远程分支
     $ git branch -a
 
+    # 获取分支关联的远程信息
+    $ git branch -vv
+    
     # 新建一个分支，但依然停留在当前分支
     $ git branch [branch-name]
 

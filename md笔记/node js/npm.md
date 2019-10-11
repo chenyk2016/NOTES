@@ -23,12 +23,15 @@
 
     // 清空缓存
     npm cache clear
+    npm cache clean --force
 
     // 查看某个库的信息
     npm view iview versions
 
     // 安装包指定版本
     npm install iview@1.1.1
+    
+    
 
 
 ### 设置镜像
