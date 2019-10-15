@@ -1,7 +1,7 @@
 # plugins
 
 ## html 模版
-  
+
   HtmlWebpackPlugin
 
   npm install --save-dev html-webpack-plugin
@@ -20,6 +20,10 @@
 
   UglifyJsPlugin 压缩js
 
+  ExtractTextPlugin 是webpack4之前用的。
+
+  模块打包js和css会独立打包
+
 ## 静态文件复制
 
   CopyWebpackPlugin
@@ -31,11 +35,15 @@
 ## 开启服务器
 
   npm install --save-dev webpack-dev-server
-  
+
   devServer: {
   	contentBase: './dist'
   }
 
 ## 6. 第三方文件依赖单独打包
 
-  DllPlugin 和 DllReferencePlugin 
+  DllPlugin 和 DllReferencePlugin
+
+## 首屏渲染 prerender-spa-plugin
+
+  在构建时就生成页面首屏 html 的一个 webpack 插件
