@@ -153,9 +153,6 @@ git merge temp
     # 取回远程仓库的变化，并与本地分支合并
     $ git pull
 
-    # 上传本地指定分支到远程仓库
-    $ git push [remote] [branch]
-
     $ git fetch origin [originBranch:newBranch]
     $ git merge origin/next
 
@@ -181,7 +178,7 @@ git merge temp
 
     # 清除git 远程分支列表缓存
     $ git fetch -p
-    
+
     # 列出所有本地分支
     $ git branch
 
@@ -193,7 +190,7 @@ git merge temp
 
     # 获取分支关联的远程信息
     $ git branch -vv
-    
+
     # 新建一个分支，但依然停留在当前分支
     $ git branch [branch-name]
 
@@ -304,10 +301,18 @@ git merge temp
     # 新建一个commit，用来撤销指定commit
     # 后者的所有变化都将被前者抵消，并且应用到当前分支
     $ git revert [commit]
+    
+    # 强制放弃本地分支记录和远程同步。
+    $ git reset --hard origin/[branch]
 
     # 暂时将未提交的变化移除，稍后再移入
     $ git stash
     $ git stash pop
+
+### 提交转移
+
+    # 将一个分支的cmmit转移到别的分支上
+    $ git cherry-pick commit1 commit2 ...
 
 ### 其他
 
