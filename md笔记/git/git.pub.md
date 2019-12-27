@@ -301,7 +301,7 @@ git merge temp
     # 新建一个commit，用来撤销指定commit
     # 后者的所有变化都将被前者抵消，并且应用到当前分支
     $ git revert [commit]
-    
+
     # 强制放弃本地分支记录和远程同步。
     $ git reset --hard origin/[branch]
 
@@ -368,3 +368,16 @@ npm config get disturl
 // 官方
 npm config set registry https://registry.npmjs.org --global
 npm config set disturl https://nodejs.org/dist/ --global
+
+### git骚操作
+
+1. 删除多个分支
+
+  # 强制删除所有分支（慎用，有些本地修改你可能没有提交）
+  git branch |xargs git branch -D
+
+  # 删除本地所有与远程仓库同步分支（本地修改过未提交的不会删除）
+  git branch |xargs git branch -d
+
+  删除本地部分分支，有选择条件（同2）
+  git branch |grep "macth"|xargs git branch -d
