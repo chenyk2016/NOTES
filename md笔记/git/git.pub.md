@@ -93,7 +93,7 @@ git merge temp
     # 查看远程仓库
     $ git remote -v
 
-    # 显示某个远程仓库的信息
+    # 显示某个分支关联的远程仓库的信息
     $ git remote show [remote]
 
     # 移除关联的名为origin的远程仓库
@@ -283,6 +283,12 @@ git merge temp
     # 恢复暂存区的所有文件到工作区
     $ git checkout .
 
+    # 取消上一个commit的提交
+    $ git reset --soft HEAD^
+
+    # 取消上n个commit的提交
+    $ git reset --soft HEAD~n
+
     # 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变
     $ git reset [file]
 
@@ -381,3 +387,14 @@ npm config set disturl https://nodejs.org/dist/ --global
 
   删除本地部分分支，有选择条件（同2）
   git branch |grep "macth"|xargs git branch -d
+
+2. 切换到新的远程分支
+
+  # 查看分支和远程的关联情况
+  git remote show origin
+
+  # 有远程分支，直接关联
+  git branch --set-upstream [branch] [remote-branch]
+
+  # 无远程，提交关联
+  git push --set-upstream origin [newbranch]
