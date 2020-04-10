@@ -30,9 +30,9 @@
 
     // 安装包指定版本
     npm install iview@1.1.1
-    
-    
 
+    // 查看配置
+    npm config ls -l
 
 ### 设置镜像
 
