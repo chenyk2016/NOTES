@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/chenyk2016/NOTES/issues"
   },
-  "homepage": "https://github.com/chenyk2016/NOTES#readme"
+  "homepage": "https://github.com/chenyk2016/NOTES#readme",
+  "devDependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.5"
+  }
 }

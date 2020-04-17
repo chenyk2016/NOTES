@@ -127,6 +127,8 @@ git merge temp
     # 重做上一次commit，并包括指定文件的新变化
     $ git commit --amend [file1] [file2] ...
 
+    # 跳过git hooks
+    $ git commit -n -m "msg"
 ### 推送代码到远程库
 
     # 推送到远程库

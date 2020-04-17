@@ -45,7 +45,7 @@
     npm config get disturl
 
 
-    npm config set registry http://registry.npmjs.org
+    npm config set registry https://www.npmjs.org
 
 ### mac npm install 错误处理
 
