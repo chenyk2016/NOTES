@@ -102,6 +102,9 @@ git merge temp
     # 关联远程仓库
     $ git remote add gitee git@gitee.com:**/**.git
 
+    # 添加远程仓库源
+    $ git remote set-url --add origin 地址
+
 ### 查看库状态（有无冲突、更新、提交等）
 
     $ git status

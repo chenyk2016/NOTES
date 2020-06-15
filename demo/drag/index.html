@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>drag</title>
+  </head>
+  <body>
+    <div>
+      <img id="img" width="100px" src="http://qupinapptest.oss-cn-beijing.aliyuncs.com/1/202003/100005/6A79099A91544159DCF6C36CDA16612C.jpg" alt="">
+    </div>
+    <div id="target">拖动到我卡卡</div>
+  </body>
+  <script type="text/javascript">
+    const target = document.getElementById('target');
+    const img = document.getElementById('img');
+    console.log(target);
+    document.addEventListener('dragstart', function (ev) {
+      console.log('ondragstart', ev);
+    });
+    document.addEventListener('dragend', function (ev) {
+      console.log('dragend', ev);
+    });
+
+
+    target.addEventListener('dragenter' ,function (ev) {
+      console.log('ondragenter', ev);
+    });
+  </script>
+</html>
