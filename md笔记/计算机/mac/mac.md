@@ -27,7 +27,7 @@
 
   no matching cipher found. Their offer: aes128-cbc,3des-cbc,blowfish-cbc,ca
   st128-cbc,arcfour,aes192-cbc,aes256-cbc,rijndael-cbc@lysator.liu.se
-  
+
   https://discussions.apple.com/message/32769748#32769748
 
 
@@ -80,3 +80,10 @@ d 表示目录， -表示文件
 | 名称 | 描述 | 参数 | 示例 |
 | :------------- | :------------- | :------------- | :------------- |
 | chmod     | 文件权限 |  | chmod 777 'filename' |
+
+
+### 查看服务
+
+curl -IL http://127.0.0.1:80
+
+##

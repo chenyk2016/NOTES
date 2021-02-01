@@ -47,6 +47,10 @@
 
     npm config set registry https://www.npmjs.org
 
+    //删除
+    npm config delete registry
+    npm config delete disturl
+
 ### mac npm install 错误处理
 
     rm -rf node_modules
