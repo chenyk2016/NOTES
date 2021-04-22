@@ -38,7 +38,7 @@
 ### @babel/preset-env
 根据配置编译对应环境
 
-### babel plugins
+### plugins
 dynamic-import-node 支持异步import()
 
 @babel/transform-runtime 一个插件，可重新使用Babel注入的帮助程序代码以节省代码大小。

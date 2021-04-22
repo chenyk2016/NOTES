@@ -22,7 +22,7 @@
 		  }
 		}
 
-## 4. url-loader 
+## 4. url-loader
 
 	(作用相当于file-loader,当文件小于限制时，可以返回一个 DataURL。)
 	npm install --save-dev url-loader
