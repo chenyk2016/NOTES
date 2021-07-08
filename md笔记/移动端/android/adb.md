@@ -3,7 +3,7 @@
 
 ### mac平台
 
-  brew cask install android-platform-tools
+  brew install android-platform-tools
 
 
 ## adb常用命令记录
@@ -18,10 +18,10 @@ adb即Android Debug Bridge（安卓调试桥）。它就是一个命令行窗口
 $ adb devices
 
 # 关闭服务
-$ adb kill-server  
+$ adb kill-server
 
 # 启动服务
-$ adb start-server  
+$ adb start-server
 
 # 通过ip地址链接设备
 $ adb connect <device-ip-address>

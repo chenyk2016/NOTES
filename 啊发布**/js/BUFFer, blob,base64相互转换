@@ -1,0 +1,44 @@
+BUFFer, blob, base64, 等数据之间的关系与转换方式。
+
+## fetch response 处理
+
+res.blob()
+res.arrayBuffer()
+res.json()
+
+## blob to base64
+
+```js
+var reader = new FileReader();
+reader.readAsDataURL(blob);
+reader.onloadend = function () {
+  var base64data = reader.result;
+  console.log(base64data);
+}
+```
+
+## arrayBuffer to base64
+
+```js
+arrayBuffer.toString('base64')
+```
+
+## arraybuffer to blob
+
+```js
+var blob = new Blob([arrayBuffer])
+```
+
+## use fetch to download image
+
+```js
+window.fetch(href).then(res => {
+  return res.arrayBuffer();
+}).then(arrayBuffer => {
+  const data = 'data:image/png;base64,' + Buffer.from(arrayBuffer).toString('base64')
+  var anchor = document.createElement("a");
+  anchor.href = data;
+  anchor.download = "";
+  anchor.click();
+});
+```
