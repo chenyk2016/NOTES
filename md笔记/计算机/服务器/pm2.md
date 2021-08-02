@@ -2,10 +2,19 @@
 
 node进程守护
 
-pm2 list
+## 安装
 
-pm2 stop    
-pm2 restart
-pm2 delete
+`sudo npm install pm2@latest -g`
+
+
+管理应用:
+
+```bash
+pm2 list
+pm2 restart app_name
+pm2 reload app_name
+pm2 stop app_name
+pm2 delete app_name
+```
 
 pm2 start npm --name "app" -- run start

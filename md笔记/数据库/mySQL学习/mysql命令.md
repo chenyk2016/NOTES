@@ -43,5 +43,9 @@ show global variables like 'port';
 （6）复制表：create table 新表名 like 被复制表名;
 
 3 修改密码
-SET PASSWORD=PASSWORD('mysql');
+
+1. SET PASSWORD=PASSWORD('mysql');
+
+2. ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+
 ```

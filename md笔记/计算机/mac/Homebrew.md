@@ -24,6 +24,10 @@ wge*/是个正则表达式， 需要包含在/中
 
   brew --prefix 【package】 查看安装信息
 
+  brew services start [name] 启动服务
+  brew services stop [name] 停止服务
+  brew services list  列出启动的服务
+
 ## brew和brew cask有什么区别
 
 <https://www.zhihu.com/question/22624898>

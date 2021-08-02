@@ -7,6 +7,31 @@
 
 [文字教程-MAC上mysql安装及使用](https://blog.csdn.net/potato512/article/details/78564106)
 
+### brew 安装
+
+```bash
+brew install mysql
+```
+
+>初始密码为空
+
+安装之后显示
+
+We've installed your MySQL database without a root password. To secure it run:
+    mysql_secure_installation
+
+MySQL is configured to only allow connections from localhost by default
+
+To connect run:
+    mysql -uroot
+
+To have launchd start mysql now and restart at login:
+  brew services start mysql
+Or, if you don't want/need a background service you can just run:
+  mysql.server start
+
+
+## 修改配置
 1. 安装之后修改配置文件
 
 ⚠️：mysql在新版中去掉了默认配置文件my.cnf如果需要可以手动创建。
