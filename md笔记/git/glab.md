@@ -31,7 +31,7 @@ glab ... --help 查看帮助
 
 ### 创建PR
 
-glab (mr create) | new  -b develop -t [title]
+glab mr create  -b develop -t [title]
 
 -m 移除源分支
 
@@ -42,3 +42,20 @@ glab mr list
 ### 同意PR
 
 glab (mr merge) | accept [ID] -y
+
+## alias 使用
+
+### pr
+
+- glab pr
+- glab prl
+- glab prm
+- glab prdiff
+
+  glab alias set pr 'mr create  --target-branch "$1"  --title "$2"'
+
+  glab alias set prl 'mr list'
+
+  glab alias set prm 'mr merge "$1"'
+
+  glab alias set prdiff 'mr diff "$1"'

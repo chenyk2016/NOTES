@@ -46,10 +46,25 @@
 
 ## Markdown Table Formatter
 	创建格式化的table
-	Ctrl+Alt+Shift+T 
+	Ctrl+Alt+Shift+T
 
 ## Table Editor
-	使用：设置语法为 table editor	
+	使用：设置语法为 table editor
 
 ## 其他
 * 创建可折叠块：https://facelessuser.github.io/pymdown-extensions/
+
+## vscode 开启 markdown snippet
+
+```json
+"markdown": {
+		"editor.formatOnSave": true,
+		"editor.renderWhitespace": "all",
+		"editor.quickSuggestions": {
+				"other": true,
+				"comments": true,
+				"strings": true
+		},
+		"editor.acceptSuggestionOnEnter": "on"
+}
+```
