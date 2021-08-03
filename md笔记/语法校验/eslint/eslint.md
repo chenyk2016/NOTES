@@ -1,8 +1,10 @@
+# eslint
 
 ## disable
+
 You may use special comments to disable some warnings.
 
-```
+```js
 关闭下一行校验
 // eslint-disable-next-line
 
@@ -71,4 +73,13 @@ module.exports = {
 ```
 
 ## 一些问题
+
 1. 对于 iview的 `Col Input`导致的缩紧警告 ，解决办法是 使用`i-col`
+
+## vscode配置eslint保存自动格式化
+
+```json
+"editor.codeActionsOnSave": {
+  "source.fixAll.eslint": true
+}
+```

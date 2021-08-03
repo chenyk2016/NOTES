@@ -44,4 +44,17 @@ show global variables like 'port';
 
 3 修改密码
 SET PASSWORD=PASSWORD('mysql');
+
+4 判断列是否存在
+select table_name,column_name,column_comment,column_type,column_key from information_schema.Columns where table_name='表名'
+
+
+
+
+```
+
+### 创建表
+
+```sql
+create Table user_stock(code char(10) COMMENT '股票代码',short_name char(20) COMMENT '股票简称',add_price char(10) COMMENT '现价(元)',add_pe char(10) COMMENT 'PE',current_situation varchar(300) COMMENT '现状分析\n（营收，营收利润，亏损原因。）',support_point varchar(300) COMMENT '后续支撑点',value_grade char(4) COMMENT '股票评分等级\n（股票的优质程度）',buy_grade char(20) COMMENT '买入评级\n（风险和价格）',price_around varchar(20) COMMENT '买卖价格区间\n（低买高卖）(PE)',trades char(20) COMMENT '行业',main_business varchar(300) COMMENT '主营业务',main_customer varchar(300) COMMENT '主要客户')
 ```
