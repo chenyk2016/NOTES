@@ -38,7 +38,7 @@ git merge temp
 ```
 
 
-### Git 全局设置:
+## Git 全局设置:
 
     # 查看当前配置
     $ git config --list
@@ -51,7 +51,7 @@ git merge temp
     # 测试连接
     $ ssh -T git@github.com
 
-### ssh
+## ssh
 查看是否已经有了ssh密钥
 
     $ cd ~/.ssh
@@ -77,7 +77,7 @@ git merge temp
 
 去github的setting下添加公钥。
 
-### 新建代码库
+## 新建代码库
 
     # 在当前目录新建一个代码库
     $ git init
@@ -88,7 +88,7 @@ git merge temp
     # 克隆项目到当前目录
     $ git clone [url]
 
-### 远程操作
+## 远程操作
 
     # 查看远程仓库
     $ git remote -v
@@ -105,11 +105,11 @@ git merge temp
     # 添加远程仓库源
     $ git remote set-url --add origin 地址
 
-### 查看库状态（有无冲突、更新、提交等）
+## 查看库状态（有无冲突、更新、提交等）
 
     $ git status
 
-### 提交
+## 提交
 
     # 提交暂存区到仓库区
     $ git commit -m [message]
@@ -132,7 +132,7 @@ git merge temp
 
     # 跳过git hooks
     $ git commit -n -m "msg"
-### 推送代码到远程库
+## 推送代码到远程库
 
     # 推送到远程库
     # 由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的
@@ -330,6 +330,9 @@ git merge temp
     # 生成一个可供发布的压缩包
     $ git archive
 
+    # 当前分支名称
+    $ git rev-parse --abbrev-ref HEAD
+
 ### 项目迁移
 
     # 先克隆仓库
@@ -345,14 +348,6 @@ git merge temp
     # 仓库镜像上传, 将仓库和版本记录上传
     $ git push --mirror git@newpath/test/new.git
 
-### tag
-
-    # 列出tag
-    $ git tag
-
-    # 拉取tag
-    $ git checkout tag
-
 ### 推荐阅读和参考：
 [阮一峰-常用 Git 命令清单](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
 [廖雪峰-git教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
@@ -364,7 +359,6 @@ git merge temp
 ~ 会匹配最近的小版本依赖包，比如~1.2.3会匹配所有1.2.x版本，但是不包括1.3.0
 ^ 会匹配最新的大版本依赖包，比如^1.2.3会匹配所有1.x.x的包，包括1.3.0，但是不包括2.0.0
 * 这意味着安装最新版本的依赖包
-
 
 ### 设置镜像
 
