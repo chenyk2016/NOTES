@@ -83,3 +83,22 @@ module.exports = {
   "source.fixAll.eslint": true
 }
 ```
+
+## markdown 支持emmet
+
+```json
+"[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.renderWhitespace": "all",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "editor.acceptSuggestionOnEnter": "on"
+}
+```
+
+## emmet支持jsx语法
+
+## typescript 语法
