@@ -1,6 +1,7 @@
-# mysql命令
+# mysql
 
 ## mysql启动关闭操作
+
 ```
 # 启动：
 sudo /usr/local/mysql/support-files/mysql.server start
@@ -24,7 +25,9 @@ mysql --version
 ```
 
 ## mysql命令
-```
+
+
+```sql
 # 查看数据库端口
 show global variables like 'port';
 
@@ -43,13 +46,12 @@ show global variables like 'port';
 （6）复制表：create table 新表名 like 被复制表名;
 
 3 修改密码
-SET PASSWORD=PASSWORD('mysql');
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'new_password';
 
 4 判断列是否存在
+
 select table_name,column_name,column_comment,column_type,column_key from information_schema.Columns where table_name='表名'
-
-
-
 
 ```
 
