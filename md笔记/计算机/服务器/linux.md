@@ -1,5 +1,22 @@
+# linux
+
+
+## 查看服务器信息
+
+```bash
+# 查看系统内核：
+uname
+
+# 查看操作系统的版本(redhat)：
+cat /etc/redhat-release
+
+
+```
+
 ## linux 命令
-```py
+
+
+```bash
 # 查看进程
 ps -ef|grep tomcat
 
@@ -26,8 +43,6 @@ mv /home/boncapp/libr ./
 安装git
 
   yum install git
-
-
 
 ## tar压缩解压缩
 
