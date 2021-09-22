@@ -1,2 +1,3 @@
 exclude
 .idea
+.DS_Store
