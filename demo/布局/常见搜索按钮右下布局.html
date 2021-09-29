@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .flex{
+      display: flex;
+      border: 1px solid #ccc;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+    .flex div{
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin: 5px;
+      font-size: 12px;
+    }
+    div.flex-right{
+      padding: 0;
+      align-self: flex-end;
+      text-align: right;
+      flex: 1 1 auto;
+      border: none;
+    }
+    .btn{
+      display: inline-block;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="flex">
+    <div>啊撒打算大撒打算打算打算打算的</div>
+    <div>啊啊1</div>
+    <div>啊啊1</div>
+    <div>啊啊1</div>
+    <div>啊啊1啊撒撒打算打算的</div>
+    <div>啊啊1啊撒撒打算打算的</div>
+    <div>啊啊1啊撒撒打算打算的</div>
+    <div>啊啊1啊撒撒打算打算的</div>
+    <div>啊啊1啊撒撒打算打算的</div>
+    <div>啊啊1啊撒撒打算打算的</div>
+    <div class="flex-right">
+      <span class="btn">
+        我是搜索，我在右下
+      </span>
+    </div>
+  </div>
+</body>
+</html>
