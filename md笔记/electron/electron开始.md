@@ -5,6 +5,8 @@
 
 ## mac平台打包windows安装包
 
+>> 不建议只用，问题多，还是用windows打包方便
+
 注意: 目前只能 macOS 10.8 至 10.14 的才能打包，因为别的wine不支持。
 [具体看](https://wiki.winehq.org/Download_zhcn)
 
