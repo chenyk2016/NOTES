@@ -2,3 +2,12 @@
 
 
 git commit --no-verify -m "commit"   就可以跳过代码检查
+
+
+## 清除git密码缓存
+
+git config --global --unset credential.helper
+
+重新设置密码缓存
+
+git config credential.helper store
