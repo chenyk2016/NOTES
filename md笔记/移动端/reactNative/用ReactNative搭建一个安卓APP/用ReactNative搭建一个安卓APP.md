@@ -1,5 +1,7 @@
 # 用ReactNative搭建一个安卓APP
->基于reactnative 0.51
+
+>基于react-native 0.51
+
 windows 环境
 
 读者须知：本文面向有稍微有基础的前后端开发者，阅读之前需要保证你有【基础的命令行知识】【基础前端知识】。如果你只是想了解大概流程，也可以看下。
@@ -7,6 +9,7 @@ windows 环境
 依据： 本文主要参考根据react native官方文档，来配置搭建环境。
 
 ## 1. 搭建开发环境
+
 [参考官方文档](https://reactnative.cn/docs/getting-started/)
 安装所有的必需软件
 模拟器装的[夜神模拟器](https://www.yeshen.com/)，没有用官方的。
@@ -14,18 +17,21 @@ windows 环境
 所有东西安装完成后，先不要执行【测试安装】步骤，往下看。
 
 ### 搭建环境遇到的问题（没问题可跳过）
+
 1. 安装完成android studio后看下SDK的安装目录有没有`platform-tools`文件夹，如果没有，说明这个并没有安装成功，其他插件同理。
 
-解决办法：
-有些插件国内下载不了，可以配置http代理。
-修改Android SDK manager界面中`tools>options`然后修改成这样`HTTP Proxy ：mirrors.neusoft.edu.cn` 和` HTTP Proxy Port:80`
-注意：地址可能会失效，可以百度一个新的试试
-![SdkManager](img/SdkManager.png)
+    解决办法：
+    有些插件国内下载不了，可以配置http代理。
+    修改Android SDK manager界面中`tools>options`然后修改成这样`HTTP Proxy ：mirrors.neusoft.edu.cn` 和`HTTP Proxy Port:80`
+    注意：地址可能会失效，可以百度一个新的试试
+    ![SdkManager](img/SdkManager.png)
 
 2. andirod stutio 安装报错
+
 https://software.intel.com/android/articles/installation-instructions-for-intel-hardware-accelerated-execution-manager-mac-os-x
 
 ## 2. 搭建好环境之后(adb需要可用)配置模拟器。
+
 ### 2.1 解决 SDK的adb版本和夜神的adb版本不一样
 
 1、先关闭所有adb的进程；
@@ -33,6 +39,7 @@ https://software.intel.com/android/articles/installation-instructions-for-intel-
 3、重启模拟器
 
 ### 2.2 配置打开夜神模拟器USB调试模式
+
 打开夜神模拟器：
 
 设置>关于平板电脑>版本号。 一直点直到出现提示进入开发者模式。
