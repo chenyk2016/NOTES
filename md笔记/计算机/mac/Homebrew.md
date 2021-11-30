@@ -14,7 +14,7 @@ wge*/是个正则表达式， 需要包含在/中
 
 ## brew 命令
 
-  brew doctor brew的自我诊断
+  brew doctor brew 的自我诊断
   brew list           列出已安装的软件
   brew update     更新brew
   brew home       用浏览器打开brew的官方网站
@@ -39,3 +39,8 @@ wge*/是个正则表达式， 需要包含在/中
 - 按一次ctrl+c 取消update , 等一秒就会安装包
 
 https://learnku.com/articles/18908
+
+
+## brew 阿里云镜像加速
+
+> https://learnku.com/cs/wikis/39228
