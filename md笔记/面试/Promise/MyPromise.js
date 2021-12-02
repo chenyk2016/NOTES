@@ -3,17 +3,20 @@ const PENDING = 'pending'
 const REJECTED = 'rejected'
 const FULFILLED = 'fulfilled'
 /**
- * 1. then之后还可以接then
- * 2. then链式调用，异步
- * then， finally可以串联，catch串联只有第一个会生效
+ *
+ * - 链式调用
  * 有catch走catch, 没catch抛出错误
  * 任何一个里面的错误，都会被下一个补获到
+ *
  * finally
- * - 不传递任何值进来
- * - 返回的结果【不会】被当作下一个的值
+ * - 不接受，不返回任何参数。
+ * - 但是error会被catch捕捉到
  * catch
+ * - 接受上一个结果的返回的值
  * - 返回的结果会被当作下一个的值
+ * - catch串联只有第一个会生效，catch抛出的异常会被下一个catch执行
  * then
+ * - 接受上一个结果的返回的值
  * - 返回的结果会被当作下一个的值
  *
  */
