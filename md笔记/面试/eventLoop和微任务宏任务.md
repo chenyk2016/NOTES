@@ -39,10 +39,28 @@ microtask,可以理解是在当前 task 执行结束后立即执行的任务。�
 
 ```json
 Promise.then
-Object.observe
 MutationObserver
 process.nextTick(Node.js 环境)
 ```
+
+**封装一个微任务 MutationObserver 实现的微任务**
+
+```javascript
+function immediate (callbacks) {
+  let counter = 1
+  const observer = new MutationObserver(callbacks)
+  const textNode = document.createTextNode(String(counter))
+  observer.observe(textNode, {
+    characterData: true
+  })
+  timerFunc = () => {
+    counter = (counter + 1) % 2
+    textNode.data = String(counter)
+  }
+  timerFunc()
+}
+```
+
 
 ## 运行机制
 
