@@ -4,7 +4,7 @@
     npm -v
 
     // 查看安装的包
-    npm list -g
+    npm list -g --depth 0
     // 初始化一个项目
     npm init
     // 安装依赖

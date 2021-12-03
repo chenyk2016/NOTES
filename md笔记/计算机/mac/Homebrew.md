@@ -24,6 +24,9 @@ wge*/是个正则表达式， 需要包含在/中
 
   brew --prefix 【package】 查看安装信息
 
+  brew uninstall [package] 卸载
+  brew autoremove // remove all the unused dependencies:
+
 ## brew和brew cask有什么区别
 
 <https://www.zhihu.com/question/22624898>

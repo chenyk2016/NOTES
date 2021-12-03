@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>promise demo</title>
+</head>
+<body>
+  <script src="../MyPromise.js"></script>
+<script>
+const promise1 = new MyPromise((resolve, reject) => {
+  console.log('1.init');
+  resolve('init-Promise')
+  // reject('init-reject-res')
+})
+
+const promise2 = new MyPromise((resolve, reject) => {
+  console.log('2.init');
+  resolve('init-Promise2')
+})
+
+promise1.then((res) => {
+  console.log('then1', res);
+  // return 'then1-res'
+  throw 'then1-error'
+
+}).catch(error => {
+  console.log('reject1', error);
+  // return 'reject1-res'
+  throw 'reject1-error'
+})
+.catch(error => {
+  // 多个catch串联只有紧跟的一个生效
+  console.log('reject1.1', error);
+
+  // return 'reject1.1-res'
+  return promise2
+})
+.finally(() => {
+  console.log('finally1');
+})
+.finally(() => {
+  // 多个finally串联均可生效
+  console.log('finally1.1');
+  // throw 'finally1.1'
+})
+.then(res => {
+  console.log('then2', res);
+  throw 'then2-reject-res'
+}).catch(error => {
+  console.log('reject2', error);
+
+}).finally(() => {
+  console.log('finally2');
+})
+
+console.log('1.1 out');
+</script>
+</body>
+</html>
