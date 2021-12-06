@@ -72,4 +72,4 @@ function immediate (callbacks) {
 - 当前宏任务执行完毕，开始检查渲染，然后GUI线程接管渲染
 - 渲染完毕后，JS线程继续接管，开始下一个宏任务（从事件队列中获取）
 
-![picture 1](images/pic_1637221603628.png)
+![picture 1](images/event-loop.png)
