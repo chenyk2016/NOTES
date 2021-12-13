@@ -27,7 +27,8 @@ gitlab-ee 企业版
 
 ## 3. 运行命令
 
-```bash sudo docker run -d \
+```bash
+sudo docker run -d \
     --hostname localhost \
     --name gitlab \
     --restart always \
