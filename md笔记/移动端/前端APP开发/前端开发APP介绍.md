@@ -1,4 +1,5 @@
 ## 目前几种APP开发方式
+
 1. 利用webview的混合开发
   1. dcloud 5+APP
   2. Apache Cordova
@@ -9,19 +10,10 @@
 
 ## 交互原理
 
-### webview模式JS和原生交互原理
-#### 1. js brage
-
-引用其他文章的一段话
-[引用原文地址](https://blog.csdn.net/duwen90/article/details/79389545)
->由于H5页面是内嵌到原生应用的WebView组件（一个浏览器内核）中，而手机浏览器Javascript引擎是在一个沙箱环境中运行，因此JavaScript的权限受到严格限制，比如没有本地文件读写权限、不能使用GPS、不能修改系统配置等。所以，如果JavaScript要用到这些受限的能力时，就需要委托原生去实现，原生完成后，再将结果通知JavaScript，因此，JavaScript和原生之间就需要一个通信的桥梁，而这个桥梁本质上就是原生的浏览器组件（我们统一称之为WebView）与Javascript 通信的通道，一般称为 WebView JavaScript Bridge, 为了简单，一般简称为 JS bridge
-
-1. 原生可以向webview注入JS代码，注入已经定义好的JS代码。
-2. JS调用注入的API吊起原生方法。
-3. 原生可以通过webview执行JS的方法。调用回掉方法通知前端。
-![js和原生交互](./img/appandjs.png)
+[bridge原理](../bridge原理.md)
 
 ## 1. Apache Cordova
+
 Apache Cordova是一个开源移动开发框架。它允许您使用标准Web技术 - HTML5，CSS3和JavaScript进行跨平台开发。应用程序在针对每个平台的包装器内执行，并依赖符合标准的API绑定来访问每个设备的功能，如传感器，数据，网络状态等。
 
 采用的webview方式

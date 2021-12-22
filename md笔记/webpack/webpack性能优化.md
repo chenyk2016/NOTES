@@ -2,8 +2,8 @@
 # webpack性能优化
 
 > 参考+摘抄: [webpack性能优化](https://segmentfault.com/a/1190000015883378#articleHeader14>)
-> [使用webpack进行web性能优化](https://juejin.im/post/5b976f4b5188255c865e0240#heading-0)
-
+> 参考： [使用webpack进行web性能优化](https://juejin.im/post/5b976f4b5188255c865e0240#heading-0)
+> [2020年了,再不会webpack敲得代码就不香了(近万字实战)](https://juejin.cn/post/6844904031240863758#heading-1)
 ## 核心概念
 
 - tree shaking TODO
