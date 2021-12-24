@@ -205,7 +205,11 @@ module.exports = {
 1. css-minimizer-webpack-plugin 优化和压缩css, 删除重复项目。
 
 ```javascript
+
+// 提取css到额外的文件
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+// 优化 压缩
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
@@ -228,25 +232,7 @@ module.exports = {
 };
 ```
 
-2. mini-css-extract-plugin 将css拆成独立的style文件
-
-```javascript
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
-module.exports = {
-  plugins: [new MiniCssExtractPlugin()],
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
-      },
-    ],
-  },
-};
-```
-
-1. 将多个 css 合并成一个
+2. 将多个 css 合并成一个
 
 ```javascript
 module.exports = {
