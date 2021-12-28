@@ -3,7 +3,7 @@ function render(str, values) {
   const reg = /\{\{([\w|\s]+)\}\}/g
 
   if(reg.test(str)) {
-    const newStr = str.replace(reg, (origin, name) => {
+    const newStr = str.replace(reg, (match, name) => {
       return values[name.trim()] || ''
     })
     return newStr
