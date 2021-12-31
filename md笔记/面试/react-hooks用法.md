@@ -85,7 +85,7 @@ function Button() {
   return <ThemedButton theme={theme} />
 }
 
-const ThemedButton = memo(({ theme }) => {
+const ThemedButton = React.memo(({ theme }) => {
   // The rest of your rendering logic
   return <ExpensiveTree className={theme} />;
 });
@@ -151,6 +151,7 @@ useCallback(fn, deps) is equivalent to useMemo(() => fn, deps)
 
 - 类似计算属性，返回一个计算后缓存的值
 - 不要在里面进行其他逻辑处理
+- 如果没有提供数组，则每次渲染都会计算一个新值。
 
 ## useRef(initialValue)
 
