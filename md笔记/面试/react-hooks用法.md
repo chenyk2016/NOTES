@@ -1,14 +1,15 @@
 # react hooks
 
 ## useState
-  - 更新数据
+
+- 更新数据
 
 ## useEffect(update, [watchValues])
 
-  - 视图更新后执行，例如以前的 componentDidMount 和 componentDidUpdate
-  - useEffect可以返回一个新的函数。
-    - 会在每次update前执行
-    - 组件销毁之前执行
+- 视图更新后执行，例如以前的 componentDidMount 和 componentDidUpdate
+- useEffect可以返回一个新的函数。
+  - 会在每次update前执行
+  - 组件销毁之前执行
 
 示例:
 
@@ -26,13 +27,13 @@ useEffect(
 
 ## useContext(MyContext)
 
-  - MyContext: React.createContext返回的结果
-  - 返回的值是最接近的MyContext.Provider的props.value
-  - 当MyContext的值变化时，组件就会重新渲染
-    - 性能优化方案:
-    - <https://github.com/facebook/react/issues/15156#issuecomment-474590693>
-    - 1. 将MyContext拆分成最小可变单位
-    - 2. 用memo和useMemo包裹子组件，防止重新渲染
+- MyContext: React.createContext返回的结果
+- 返回的值是最接近的MyContext.Provider的props.value
+- 当MyContext的值变化时，组件就会重新渲染
+  - 性能优化方案:
+  - <https://github.com/facebook/react/issues/15156#issuecomment-474590693>
+  - 1. 将MyContext拆分成最小可变单位
+  - 2. 用memo和useMemo包裹子组件，防止重新渲染
 
 示例:
 
