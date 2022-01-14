@@ -9,7 +9,7 @@ const FULFILLED = 'fulfilled'
  * 任何一个里面的错误，都会被下一个补获到
  *
  * finally
- * - 不接受，不返回任何参数。
+ * - 不接受，不返回任何参数，后面的仍旧继承前面的值
  * - 但是error会被catch捕捉到
  * catch
  * - 接受上一个结果的返回的值
@@ -19,6 +19,8 @@ const FULFILLED = 'fulfilled'
  * - 接受上一个结果的返回的值
  * - 返回的结果会被当作下一个的值
  *
+ * 问题一
+ *
  */
 class MyPromise {
   status = 'pending'
@@ -26,10 +28,10 @@ class MyPromise {
   preValue = undefined
   constructor(executor) {
     try {
-      executor(this._resolve, this._reject)
+      executor(this.resolve, this.reject)
     } catch (error) {
       // 执行报错
-      this._reject(error)
+      this.reject(error)
     }
   }
   then(callback) {
@@ -91,27 +93,27 @@ class MyPromise {
       }
       if(this.isMyPromise(newValue)) {
         newValue.then((v) => {
-          this._resolve(v)
+          this.resolve(v)
         }).catch(error => {
-          this._reject(error)
+          this.reject(error)
         })
       } else {
-        this._resolve(newValue)
+        this.resolve(newValue)
       };
     } catch (error) {
       // throw error
       // 有catch走catch, 没catch跑出错误
-      this._reject(error)
+      this.reject(error)
     }
   }
 
-  _resolve  = (value) => {
+  resolve  = (value) => {
     const preStatus = this.status
     this.status = FULFILLED
     this.value = value
     this.prepareHandlerCallback(preStatus)
   }
-  _reject = (value) => {
+  reject = (value) => {
     const preStatus = this.status
     this.status = REJECTED
     this.value = value
