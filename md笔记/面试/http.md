@@ -1,4 +1,4 @@
-# Http协议
+# Http
 
 - <https://vue3js.cn/interview/http/HTTP_HTTPS.html>
 - https代理的实现
@@ -51,3 +51,38 @@ https数据传输过程:
 websocket 和http有部分交集
 
 只是tcp连接建立之后就不断开了。
+
+## http和https的区别
+
+1. http数据是明文传输的
+2. http默认端口80，https默认443
+3. HTTPS 由于需要设计加密以及多次握手，性能方面不如 HTTP。 **多次握手？？**
+4. HTTPS需要SSL，SSL 证书需要钱，功能越强大的证书费用越高
+
+## http1.0、1.1、2.0的区别
+
+### http1.0
+
+每次请求都需要与服务器建立一个TCP连接
+如果需要建立长连接，需要设置一个非标准的Connection字段 Connection: keep-alive
+
+### http1.1
+
+http1.1，默认支持长连接（Connection: keep-alive），即在一个TCP连接上可以传送多个HTTP请求和响应，减少了建立和关闭连接的消耗和延迟
+
+- 引入了更多的缓存控制策略，如If-Unmodified-Since, If-Match, If-None-Match等缓存头来控制缓存策略
+- 引入host，实现了在一台WEB服务器上可以在同一个IP地址和端口号上使用不同的主机名来创建多个虚拟WEB站点
+- 引入range，允许值请求资源某个部分
+
+### http2.0
+
+- 多路复用
+- 二进制分帧
+- 首部压缩
+- 服务器推送
+
+1. 多路复用
+
+HTTP/2 复用TCP连接，在一个连接里，客户端和浏览器都可以同时发送多个请求或回应，而且不用按照顺序一一对应，这样就避免了”队头堵塞”
+
+2.
