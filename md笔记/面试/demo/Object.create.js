@@ -125,10 +125,50 @@ function throttle(fn, duration = 0) {
 // }, 2000)
 
 
+/**
+ * 获取数据类型
+ * @param {*} any
+ * @returns str
+ */
 function getType(any) {
   return Object.prototype.toString.call(any).match(/\[object (.*)\]/)[1].toLowerCase()
 }
 
-console.log( getType(1) );
-console.log( getType([]) );
-console.log( getType(function() {}) );
+// console.log( getType(1) );
+// console.log( getType([]) );
+// console.log( getType(function() {}) );
+
+/**
+ * myBind
+ * eg: myBind(thisArg, arg1, arg2, ...)
+ *
+ * 1. 处理预置参数和调用参数
+ * 2. 处理new的调用
+ *
+ *
+ * @param {*} fn
+ * @param {*} thisArg
+ * @returns
+ */
+Function.prototype.myBind = function(thisArg) {
+  const fn = this
+  const preArgs = Array.from(arguments).slice(1)
+
+  return function Fn() {
+    // 处理new调用的情况，测试不改变this
+    const context = this instanceof Fn ? this : thisArg
+    // 合并参数
+    const args = preArgs.concat(Array.from(arguments))
+
+    fn.apply(context, args)
+  }
+}
+
+// function sayName(pre, newP) {
+//   console.log(pre, this.name, newP);
+// }
+
+// const fn = sayName.myBind({ name: '小明' }, 123)
+
+// new fn(444)
+// fn(333)
