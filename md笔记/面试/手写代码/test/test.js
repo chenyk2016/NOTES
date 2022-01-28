@@ -1,20 +1,4 @@
-# 手写代码
 
-参考: <https://juejin.cn/post/6946136940164939813#heading-0>
-
-## javascript基础
-
-### [手写一个Promise](./Promise/MyPromise.js)
-
-### [new的实现](./new的实现.md)
-
-### [call和apply的实现](./call和apply的实现.md)
-
-### Object.create
-
-用已有对象作为原型，创建一个新对象。
-
-```javascript
 /**
  *
  * @param {object | null} obj
@@ -25,11 +9,18 @@ function create(obj) {
   Object.setPrototypeOf(res, p)
   return res
 }
-```
 
-### instanceof
+// window.a = {name: 'a'}
 
-```javascript
+// window.b = Object.create(a)
+
+// window.c = {name: 'c'}
+
+// window.d = create(c)
+
+
+// console.log(a, b, c, d);
+
 /**
  * instanceof
  * @param {*} a
@@ -50,32 +41,15 @@ function instance(a, b) {
   return instance(proto, b)
 }
 
-```
+// a = {}
+// console.log(a instanceof Object,  instance(a, Object) );
+// console.log(null instanceof Object, instance(null, Object) );
+// console.log(1 instanceof Object, instance(1, Object) );
 
-### Promise.race
 
-```javascript
-/**
- * 执行最快，并返回它的结果， arr 为空是，返回一个永远pending的promise
- * @param {Promise} arr
- * @returns
- */
-function race(arr) {
-  return new Promise((resolve, reject) => {
-    for (let i = 0; i < array.length; i++) {
-      arr[i].then(resolve, reject)
-    }
-  })
-}
-```
-
-### 防抖函数
-
-```javascript
 /**
  * 防抖
  * 函数防抖是指在事件被触发 n 秒后再执行回调，如果在这 n 秒内事件又被触发，则重新计时
- *
  * 1. 这可以使用在一些点击请求的事件上，避免因为用户的多次点击向后端发送多次请求。
  * 2. 页面resize事件
  *
@@ -99,16 +73,22 @@ function debounce(cb, time = 0) {
     }, time)
   }
 }
-```
 
-### 节流函数
+// const debounceFn = debounce(()=> {
+//   console.log(123)
+// }, 2000)
 
-```javascript
+// debounceFn()
+
+// setTimeout(() => {
+//   console.log(1);
+//   debounceFn()
+// }, 1000)
+
 /**
  *
  * 节流函数
  * 固定时间内，执行一次，期间其他方法忽略
- *
  * 节流可以使用在 scroll 函数的事件监听上，通过事件节流来降低事件调用的频率。
  * 例如输入框的搜索功能
  *
@@ -130,12 +110,21 @@ function throttle(fn, duration = 0) {
     }
   }
 }
-```
 
-### 类型判断
+// const throttleFn = throttle(() => {
+//   console.log(1);
+// }, 100)
+
+// throttleFn()
+// throttleFn()
+// throttleFn()
+
+// setTimeout(() => {
+//   console.log(2);
+//   throttleFn()
+// }, 2000)
 
 
-```javascript
 /**
  * 获取数据类型
  * @param {*} any
@@ -144,22 +133,22 @@ function throttle(fn, duration = 0) {
 function getType(any) {
   return Object.prototype.toString.call(any).match(/\[object (.*)\]/)[1].toLowerCase()
 }
-```
 
-### bind
+// console.log( getType(1) );
+// console.log( getType([]) );
+// console.log( getType(function() {}) );
 
-```javascript
 /**
  * myBind
- * eg: myBind(thisArg: any, ...arg1: Array<mixed>): Function
+ * eg: myBind(thisArg, arg1, arg2, ...)
  *
  * 1. 处理预置参数和调用参数
- * 2. 处理new的调用情况
+ * 2. 处理new的调用
  *
  *
  * @param {*} fn
  * @param {*} thisArg
- * @returns Function
+ * @returns
  */
 Function.prototype.myBind = function(thisArg) {
   const fn = this
@@ -174,20 +163,16 @@ Function.prototype.myBind = function(thisArg) {
     fn.apply(context, args)
   }
 }
-```
 
-### 柯里化工具函数
+// function sayName(pre, newP) {
+//   console.log(pre, this.name, newP);
+// }
 
-<https://juejin.cn/post/6844903882208837645>
+// const fn = sayName.myBind({ name: '小明' }, 123)
 
-定义: 柯里化是一种将使用多个参数的一个函数转换成一系列使用一个参数的函数的技术。
+// new fn(444)
+// fn(333)
 
-实现要点: 接收一部分参数，返回一个函数接收剩余参数，接收足够参数后，执行原函数。
-
-用途: 柯里化本质上是降低通用性，提高适用性
-例如: 需要两个参数的验证函数，可以拆分成验证器函数，和执行验证的函数，两个
-
-```javascript
 /**
  * 将fn柯里化(参数可多次调用传递)
  *
@@ -207,17 +192,12 @@ function carry(fn) {
     return carryFn
   }
 }
-```
 
-### 浅拷贝
+// const carryInst = carry((a, b, c) => {
+//   return a + b +c
+// })
+// console.log( carryInst(1)(2)(3) );
 
-可以实现浅拷贝的方法:
-
-1. Array.slice Array.concat
-2. Object.assign
-3. 解构运算 ...
-
-```javascript
 /**
  * clone 浅拷贝
  * @param {*} data
@@ -228,7 +208,7 @@ function clone(data) {
 
   let res
   if (type === 'array') {
-    res = data..slice(0)
+    res = data.map(v => v)
   } else if (type === 'object' ) {
     res = Object.assign({}, data)
   } else {
@@ -236,15 +216,14 @@ function clone(data) {
   }
   return res
 }
-```
 
-### 深拷贝
+// window.a = {a: 1}
+// window.b = [1,2,{b: 1}]
+// window.cloneA = clone(a)
+// window.cloneb = clone(b)
 
-JSON.stringify。
+// console.log( cloneA, cloneB );
 
-但是 undefined，symbol，function, 正则 等无法拷贝
-
-```javascript
 /**
  * 深拷贝
  * @param {any} data
@@ -268,17 +247,12 @@ function cloneDeep(data) {
   }
   return res
 }
-```
 
-## 数据处理
-
-### 日期函数格式化
-
-```javascript
-
-dateFormat(new Date('2020-12-01'), 'yyyy/MM/dd') // 2020/12/01
-dateFormat(new Date('2020-04-01'), 'yyyy/MM/dd') // 2020/04/01
-dateFormat(new Date('2020-04-01'), 'yyyy年MM月dd日') // 2020年04月01日
+// window.a = {a: 1}
+// window.b = [1,2,{b: 1}]
+// window.cloneA = cloneDeep(a)
+// window.cloneB = cloneDeep(b)
+// console.log(cloneA, cloneB );
 
 /**
  *
@@ -304,20 +278,20 @@ function dateFormat(date, format) {
     return dateObj[$]
   })
 }
-```
 
-### 交换ab的值
+// console.log( dateFormat(new Date('2020-12-01'), 'yyyy/MM/dd') );  // 2020/12/01
+// console.log( dateFormat(new Date('2020-04-01'), 'yyyy/MM/dd') );  // 2020/04/01
+// console.log( dateFormat(new Date('2020-04-01'), 'yyyy年MM月dd日')  );  //  2020年04月01日
 
-```javascript
-function changeValue() {
+/**
+ * 交换变量的值
+ */
+function exchangeValue() {
   let a = 1, b = 2
   [a, b] = [b, a]
 }
-```
 
-### 数据的乱序输出
 
-```javascript
 function randomArray(arr) {
   const randomArr = []
   const _arr = arr.map((v, i) => i)
@@ -329,15 +303,17 @@ function randomArray(arr) {
 
   return randomArr
 }
-```
 
-### 数组的扁平化
+// console.log( randomArray([1,2,3,4,5]) );
+// console.log( randomArray([5,4,3,2,1]) );
 
-[1, 2, [3, 4]]
-
-```javascript
-// 1. 递归实现
-
+/**
+ * 数组展开
+ * @param {*} arr
+ * @param {*} grade
+ * @param {*} currentGrade
+ * @returns
+ */
 function expendArr (arr, grade = 1, currentGrade = 1) {
   let resArr = []
   const isEnd = currentGrade === grade
@@ -353,22 +329,8 @@ function expendArr (arr, grade = 1, currentGrade = 1) {
   return resArr
 }
 
-// 2. 扩展运算符
-function expendArr (arr) {
-  return [].concat(...arr)
-}
+// console.log( expendArr([1,2,[3,4],[[5,6]]], 3) );
 
-// 3. flat
-[].flat(grade)
-```
-
-### 数组去重
-
-```javascript
-// 1. Set
-const newArr = new Set(arr)
-
-// 2.
 /**
  * 数组去重
  * @param {arr} arr
@@ -382,23 +344,9 @@ function uniqueArr (arr) {
   })
   return newArr
 }
-```
 
-### 字符串的repeat
+// console.log( uniqueArr( [1,2,3,4,5,5,1] ) );
 
-```javascript
-function repeat(v, n) {
-  return new Array(n + 1).join(v)
-}
-```
-
-### 字符串反转
-
-```javascript
-String.prototype.reverse = function () {
-  const str = this
-  return str.split('').reverse().join('')
-}
 
 String.prototype.reverse = function () {
   const str = this
@@ -412,19 +360,15 @@ String.prototype.reverse = function () {
 
   return newStr
 }
-```
 
-### 将数字每千分位用逗号隔开
+// console.log( '12345'.reverse() );
 
-```javascript
 function numFormat(num) {
   return `${num}`.replace(/\B(?=(\d{3})+\b)/g, ',')
 }
-```
 
-### 大整数相加
+// console.log( numFormat('123456789.12345') );
 
-```javascript
 /**
  * 大数相加
  *
@@ -448,54 +392,9 @@ function bigNumPlus(a, b) {
 
   return res
 }
-```
 
-### 实现类数组转化为数组
+// console.log( bigNumPlus('111', '2') );
 
-```javascript
-Array.prototype.slice.call(arrayLike);
-Array.prototype.splice.call(arrayLike);
-Array.prototype.concat.call([], arrayLike);
-Array.form(arrayLike)
-[...arrayLike]
-```
-
-### 将js对象转化为树形结构  TODO 25min
-
-```javascript
-// 转换前：
-source = [{
-  id: 1,
-  pid: 0,
-  name: 'body'
-}, {
-  id: 2,
-  pid: 1,
-  name: 'title'
-}, {
-  id: 3,
-  pid: 2,
-  name: 'div'
-}]
-// 转换为:
-tree = [{
-      id: 1,
-      pid: 0,
-      name: 'body',
-      children: [{
-          id: 2,
-          pid: 1,
-          name: 'title',
-          children: [{
-            id: 3,
-            pid: 1,
-            name: 'div'
-          }]
-        }
-      }]
-```
-
-```javascript
 /**
  * 数组对象转换成tree
  *
@@ -521,6 +420,64 @@ function treeObj(arr) {
 
   return res;
 }
-```
 
-### 解析 URL Params 为对象
+// // 转换前：
+source = [{
+            id: 1,
+            pid: 0,
+            name: 'body'
+          }, {
+            id: 2,
+            pid: 1,
+            name: 'title'
+          }, {
+            id: 3,
+            pid: 2,
+            name: 'div'
+          }]
+// // 转换为:
+// tree = [{
+//           id: 1,
+//           pid: 0,
+//           name: 'body',
+//           children: [{
+//             id: 2,
+//             pid: 1,
+//             name: 'title',
+//             children: [{
+//               id: 3,
+//               pid: 1,
+//               name: 'div'
+//             }]
+//           }
+//         }]
+
+// console.log( treeObj(source) );
+
+
+function parseUrl(url) {
+  const obj = {}
+  url.replace(/[?|#](?=(([^(?|#)=&]+)(=([^&#]+))?)*)/g, ($, key, $2, value, $4) => {
+    let _key = key
+    let _value = value === undefined ? true : value
+
+    // if (/\[\d+\]/.test(key)) {
+    //   const keyMatch = _key.match(/([^\[\]]+)/g)
+    //   if(keyMatch) {
+    //     _key = keyMatch[0]
+    //     index = keyMatch[1]
+    //   }
+    //   (obj[_key] || (obj[_key] = []))[index] = _value
+    // }
+
+    if (obj.hasOwnProperty(_key)) {
+      obj[_key] = [].concat(obj[_key], _value)
+    } else {
+      obj[_key] = _value
+    }
+  })
+
+  return obj
+}
+
+console.log( parseUrl('https://juejin.cn/post/6946136940164939813#heading-48?a.a=1&b=2&c=name&c=aaa') );
