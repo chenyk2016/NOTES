@@ -455,29 +455,216 @@ source = [{
 // console.log( treeObj(source) );
 
 
+/**
+ * 解析url query参数成对象
+ * @param {*} url
+ * @returns obj
+ */
 function parseUrl(url) {
   const obj = {}
-  url.replace(/[?|#](?=(([^(?|#)=&]+)(=([^&#]+))?)*)/g, ($, key, $2, value, $4) => {
-    let _key = key
-    let _value = value === undefined ? true : value
 
-    // if (/\[\d+\]/.test(key)) {
-    //   const keyMatch = _key.match(/([^\[\]]+)/g)
-    //   if(keyMatch) {
-    //     _key = keyMatch[0]
-    //     index = keyMatch[1]
-    //   }
-    //   (obj[_key] || (obj[_key] = []))[index] = _value
-    // }
+  const queryMatch = url.match(/\?([^?#]+)/)
+  const queryStr = queryMatch ? queryMatch[1] : ''
 
-    if (obj.hasOwnProperty(_key)) {
-      obj[_key] = [].concat(obj[_key], _value)
+  queryStr.replace(/([^&=]+)(=([^&=]+))?/g, ($, $1, $2, $3) => {
+    console.log($, $1, $2, $3);
+    let key = $1
+    let value = $3 === undefined ? true : $3
+
+    // 重复的key转变成数组
+    if (obj.hasOwnProperty(key)) {
+      obj[key] = [].concat(obj[key], value)
     } else {
-      obj[_key] = _value
+      obj[key] = value
     }
   })
 
   return obj
 }
 
-console.log( parseUrl('https://juejin.cn/post/6946136940164939813#heading-48?a.a=1&b=2&c=name&c=aaa') );
+// console.log( parseUrl('https://juejin.cn/post/6946136940164939813?a=1&a=2&b=2&c=name&c=aaa') );
+
+// 循环打印红黄绿
+// 红灯 3s 亮一次，绿灯 1s 亮一次，黄灯 2s 亮一次；如何让三个灯不断交替重复亮灯？
+
+async function run() {
+  async function delay(time) {
+    await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve()
+      }, time);
+    })
+  }
+
+  await delay(3000)
+  console.log('红灯');
+  await delay(1000)
+  console.log('绿灯');
+  await delay(2000)
+  console.log('黄灯');
+  run()
+}
+// run()
+
+// 2. 实现每隔一秒打印 1,2,3,4
+
+function print(v) {
+  setTimeout(() => {
+    console.log(v);
+    if(v < 4) {
+      print(v + 1)
+    }
+  }, 1000);
+}
+
+// print(1)
+
+// 有30个小孩儿，编号从1-30，围成一圈依此报数，1、2、3 数到 3 的小孩儿退出这个圈， 然后下一个小孩 重新报数 1、2、3，问最后剩下的那个小孩儿的编号是多少?
+
+function run (len = 30) {
+  // 给小孩编号
+  let children = Array(30).fill('').map((v, i) => i+1);
+  console.log(children);
+  let num = 1
+  while(children.length > 1) {
+    let rest = []
+    children.forEach(code => {
+      if(num !== 3) {
+        rest.push(code)
+        num++
+      } else {
+        num = 1
+      }
+    })
+
+    console.log(rest);
+
+    children = rest
+  }
+
+  return children[0]
+}
+
+// console.log( run() );
+
+// 实现发布订阅模式
+
+class EventCenter{
+  handlers = {}
+
+  addEventListener(type, handler) {
+    this.handlers[type] = (this.handlers[type] || []).concat(handler)
+  }
+
+  dispatch(type, params) {
+    const actions = this.handlers[type]
+    if (actions) {
+      actions.forEach((handler) => {
+        handler(params)
+      })
+    }
+  }
+
+  removeEventListener(type, handler) {
+    const handlers = this.handlers[type]
+    if (!handlers) return;
+
+    if(handler) {
+      handlers.forEach((v, index) => {
+        if (v === handler) {
+          handlers.splice(index, 1)
+        }
+      })
+    } else {
+      handlers = []
+    }
+  }
+}
+
+// 查出出现频率最高的词 11:10 -
+function findMostWord(str) {
+  const words = str.match(/[a-zA-Z]+/g)
+  const uniqueWord = new Set(words)
+  let max = 0
+  let maxWord = ''
+
+  uniqueWord.forEach(word => {
+    const reg = new RegExp(`\\b${word}\\b`, 'g')
+    const match = str.match(reg)
+
+    if (max < match.length) {
+      max = match.length
+      maxWord = word
+    }
+  })
+
+  return maxWord
+}
+
+// console.log( findMostWord('a a,a b asdc asdasd') );
+
+// 实现双向数据绑定
+function dataBind() {
+  const obj = {}
+  let input = document.getElementById('input')
+
+  Object.defineProperty(obj, 'value', {
+    configurable: true,
+    enumerable: true,
+    get() {
+
+    },
+    set(v) {
+      obj.value = v
+      input.value = v
+    }
+  })
+
+  input.addEventListener('input', (e) => {
+    obj.value = e.target.value
+  })
+}
+
+// 实现简单路由
+class Router {
+  constructor(props) {
+    this.routes = {}
+    this.currentHash = ''
+    this.beforeEach = props.beforeEach || function () {}
+
+    let freshRoute = this.freshRoute.bind(this)
+    window.addEventListener('load', freshRoute, false)
+    window.addEventListener('hashchange', freshRoute, false)
+  }
+
+
+
+  add(path, cb) {
+    this.routes[path] = cb
+  }
+
+  freshRoute() {
+    this.currentHash = location.hash.slice(1) || '/'
+
+    const cb = this.routes[this.currentHash]
+
+    this._beforeEach(this.currentHash)
+
+    cb && cb()
+  }
+
+  _beforeEach(currentHash) {
+    this.beforeEach(currentHash)
+  }
+
+  push(path) {
+    history.pushState({}, null, '#' + path)
+    this.freshRoute()
+  }
+}
+
+// const route = new Router({
+//   beforeEach(currentHash) {
+//     console.log(currentHash);
+//   }
+// })
