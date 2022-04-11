@@ -77,6 +77,26 @@ git merge temp
 
 去github的setting下添加公钥。
 
+### mac添加多个ssh key
+
+`~/.ssh/`目录下，新建`config`文件
+
+通过以下方式配置:
+
+```bash
+# github
+# Host 域名或者IP 例如: github.com
+# PreferredAuthentications  publickey
+# IdentityFile  ~/.ssh/id_rsa 验证文件地址
+Host  github.com
+PreferredAuthentications  publickey
+IdentityFile  ~/.ssh/id_rsa
+# lianjia
+Host  lianjia.com
+PreferredAuthentications  publickey
+IdentityFile  ~/.ssh/id_rsa_lianjia
+```
+
 ## 新建代码库
 
     # 在当前目录新建一个代码库
