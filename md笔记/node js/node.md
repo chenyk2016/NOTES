@@ -33,3 +33,7 @@ n stable
 # 安装最新的版本
 n latest
 ```
+
+## 调试node项目
+
+https://code.visualstudio.com/docs/nodejs/nodejs-debugging
