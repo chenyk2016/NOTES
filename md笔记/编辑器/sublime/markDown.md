@@ -2,8 +2,8 @@
 
 ## 使用
 
-|        项目        |              使用             |
-| :-----------------| :---------------------------- |
+| 项目               | 使用                          |
+| :----------------- | :---------------------------- |
 | 配对               | ``                            |
 | 列表               | * - + 1                       |
 | 大段引用1111111111 | >或多个                       |
@@ -42,14 +42,18 @@
 # 插件
 
 ## Markdown Preview
+
 	md 文档预览，可配合`liveLoading`使用
 
 ## Markdown Table Formatter
+
 	创建格式化的table
-	Ctrl+Alt+Shift+T 
+	Ctrl+Alt+Shift+T
 
 ## Table Editor
-	使用：设置语法为 table editor	
+
+	使用：设置语法为 table editor
 
 ## 其他
+
 * 创建可折叠块：https://facelessuser.github.io/pymdown-extensions/
