@@ -49,3 +49,10 @@ sudo docker exec -it <app-name> /bin/bash
 gitlab-ctl reconfigure
 
 ```
+
+## 启动docker
+
+```bash
+service docker start
+
+```
