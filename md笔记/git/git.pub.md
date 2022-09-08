@@ -235,7 +235,7 @@ IdentityFile  ~/.ssh/id_rsa_lianjia
     $ git checkout -
 
     # 建立追踪关系，在现有分支与指定的远程分支之间
-    $ git branch --set-upstream [branch] [remote-branch]
+    $git branch --set-upstream-to=<远程>/<分支> <本地分支>
 
     # 合并指定分支到当前分支
     $ git merge [branch]
