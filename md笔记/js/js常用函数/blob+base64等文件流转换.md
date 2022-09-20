@@ -25,3 +25,26 @@ reader.onloadend = function () {
   console.log(base64data);
 }
 ```
+
+## base64ToBlob
+
+```js
+function base64ToBlob (base64data: string) {
+  const bytes = window.atob(base64data.split(',')[1])
+
+  //处理异常,将ascii码小于0的转换为大于0
+  var ab = new ArrayBuffer(bytes.length);
+  var ia = new Uint8Array(ab);
+  for (var i = 0; i < bytes.length; i++) {
+    ia[i] = bytes.charCodeAt(i);
+  }
+  const blob = new Blob([ab], { type: 'image/png' });
+  return blob;
+}
+```
+
+## blob to urlObject
+
+```javascript
+const url = window.URL.createObjectURL(blob);
+```
