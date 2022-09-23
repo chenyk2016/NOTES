@@ -60,3 +60,15 @@
 不行再加一个开启权限的
 
     sudo -s
+
+### npm别名
+
+    npm install 别名@npm:包名@版本号
+
+    npm install vue2@npm:vue@^2.6.14
+
+### yarn 别名
+
+    yarn install 别名@yarn:包名@版本号
+
+    yarn install vue2@yarn:vue@^2.6.14
