@@ -61,6 +61,45 @@ postcss-loader
 "not dead"
 ```
 
+### postcss-use 直接在css中开启PostCSS
+
+使用`@use postcss-pxtorem;`
+
+```js
+options: {
+  // Necessary for external CSS imports to work
+  // https://github.com/facebook/create-react-app/issues/2677
+  ident: "postcss",
+  plugins: () => [
+    require("postcss-flexbugs-fixes"),
+    require("postcss-preset-env")({
+      autoprefixer: {
+        flexbox: "no-2009",
+      },
+      stage: 3,
+    }),
+    postcssUse({
+      modules: ["postcss-pxtorem"],
+      options: {
+        "postcss-pxtorem": {
+          rootValue: 96,
+          propList: ["*"],
+          unitPrecision: 8,
+          replace: false,
+        },
+      },
+    }),
+    // Adds PostCSS Normalize as the reset css with default options,
+    // so that it honors browserslist config in package.json
+    // which in turn let's users customize the target behavior as per their needs.
+    postcssNormalize(),
+  ],
+  sourceMap: isEnvProduction && shouldUseSourceMap,
+},
+```
+
+###
+
 ## plugins
 
 autoprefixer 添加供应商前缀

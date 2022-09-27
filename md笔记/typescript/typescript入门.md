@@ -1,5 +1,7 @@
 # TypeScript入门
 
+官网: <https://www.typescriptlang.org/>
+
 比较全面: <https://juejin.cn/post/7018805943710253086#heading-114>
 
 [TypeScript 入门教程](https://juejin.cn/post/6844904182843965453#heading-15)
