@@ -66,7 +66,6 @@ npm install babel-plugin-import --save-dev
 ]
 ```
 
-
 create-react-app 中配置
 
 ```javascript
