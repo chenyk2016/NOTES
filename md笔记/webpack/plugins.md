@@ -47,3 +47,30 @@
 ## 首屏渲染 prerender-spa-plugin
 
   在构建时就生成页面首屏 html 的一个 webpack 插件
+
+## 组件库按需加载 babel-plugin-import
+
+npm install babel-plugin-import --save-dev
+
+普通webpack .babelrc配置
+
+```js
+"plugins": [
+  ["import",
+    {
+      "libraryName": "antd",
+      "libraryDirectory": "lib",
+      "style": true, // 默认less, 也可使用"css"
+    },
+  "antd"],
+]
+```
+
+
+create-react-app 中配置
+
+```javascript
+plugins: [
+  [require.resolve('babel-plugin-import'), { "libraryName": "antd", "style": "css"}],
+]
+```
