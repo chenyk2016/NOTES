@@ -15,3 +15,9 @@
   - babel创建插件用户手册 <https://github.com/jamiebuilds/babel-handbook>
   - 实时看到各种库的AST的结构 <https://astexplorer.net/>
   - 抽象语法树AST <https://segmentfault.com/a/1190000016231512>
+
+npm 执行node，无法使用全局的node包（好像是因为父目录还有node_modules）
+
+react hook 为什么要返回数组
+
+form-table优化，可以做验证
