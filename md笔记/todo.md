@@ -1,5 +1,7 @@
 # todos
 
+主要方向: 前端技术 + node
+
 - puppeteer 在服务端打开浏览器，和计算机底层进行交互。
 - carlo
 - node爬虫
@@ -15,6 +17,11 @@
   - babel创建插件用户手册 <https://github.com/jamiebuilds/babel-handbook>
   - 实时看到各种库的AST的结构 <https://astexplorer.net/>
   - 抽象语法树AST <https://segmentfault.com/a/1190000016231512>
+- react ssr
+- koa
+- typescript
+- es新语法学习
+
 
 npm 执行node，无法使用全局的node包（好像是因为父目录还有node_modules）
 
