@@ -37,3 +37,20 @@ n latest
 ## 调试node项目
 
 https://code.visualstudio.com/docs/nodejs/nodejs-debugging
+
+
+## 看node包资源查找路径
+
+cmd进入node命令模式
+
+输入`modules.path`
+
+## 获取node的安装路径
+
+npm config get prefix
+
+### 常见问题 为什么全局安装的node包不能被require？
+
+><https://www.jianshu.com/p/b437e125597e?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation>
+
+全局安装的node_modules的位置十分复杂，不是在根目录内，而是根目录的另一个分支的子目录中，这样的话，系统无法是找到的。
