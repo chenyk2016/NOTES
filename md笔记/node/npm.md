@@ -72,3 +72,6 @@
     yarn install 别名@yarn:包名@版本号
 
     yarn install vue2@yarn:vue@^2.6.14
+## npm安装github包
+
+npm install git+https://xieyufang@gitlab.innotechx.com/x/report-wxa.git
