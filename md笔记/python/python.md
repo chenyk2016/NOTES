@@ -63,3 +63,10 @@ pyenv global 3.6.5
 # 指定多个全局版本, 3版本优先
 pyenv global 3.6.5 2.7.14
 ```
+
+## windows安装python
+
+我的电脑上面右键-》属性-》系统设置-》高级-》下面有个环境变量的按钮
+点开之后，在系统变量找到path
+添加新的路径`C:\Python27`
+添加 PYTHON_HOME

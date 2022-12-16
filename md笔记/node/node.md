@@ -18,8 +18,11 @@ npm的start是一个特殊的脚本名称，
 需要这样用npm run {script name}如npm run build，
 
 
-### 升级node
-装个node版本管理工具n
+## node版本管理
+
+### mac node版本管理工具n
+
+mac装个node版本管理工具n
 
     npm i -g n
 
@@ -32,6 +35,27 @@ n stable
 
 # 安装最新的版本
 n latest
+```
+
+### windows node版本管理工具nvm-windows
+
+安装: https://github.com/coreybutler/nvm-windows/releases
+
+```bash
+# 当前版本
+nvm current
+
+# 设置node镜像
+nvm node_mirror https://npmmirror.com/mirrors/node/
+
+# 设置npm镜像
+nvm npm_mirror https://npmmirror.com/mirrors/npm/
+
+# 安装node
+nvm install <version>
+
+# 使用node
+mvm use <version>
 ```
 
 ## 调试node项目
