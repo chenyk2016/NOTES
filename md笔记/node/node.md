@@ -67,7 +67,7 @@ https://code.visualstudio.com/docs/nodejs/nodejs-debugging
 
 cmd进入node命令模式
 
-输入`modules.path`
+输入`module.paths`
 
 ## 获取node的安装路径
 
