@@ -1,4 +1,5 @@
 
+## node 运行时变量 运行参数
 
 ```js
 process.env.PWD  // 当前运行环境

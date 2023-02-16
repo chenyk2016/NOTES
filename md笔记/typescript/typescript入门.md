@@ -20,3 +20,23 @@
 // @ts-ignore # 忽略下一行
 // @ts-nocheck # 忽略整个文件
 ```
+
+## 使用
+
+```js
+// 全局定义
+declare global {
+  interface Window {
+    MSV: any;
+  }
+
+  const a: any;
+}
+
+
+declare module 'axios' {
+  interface a {
+
+  }
+}
+```
