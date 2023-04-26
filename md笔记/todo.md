@@ -28,3 +28,11 @@ npm 执行node，无法使用全局的node包（好像是因为父目录还有no
 react hook 为什么要返回数组
 
 form-table优化，可以做验证
+
+
+vite插件
+- https://juejin.cn/post/7103165205483356168#heading-16
+- https://juejin.cn/post/7110920974379253791#heading-8
+
+vite 和 webpack 对比
+https://juejin.cn/post/7219567168316276796
