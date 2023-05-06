@@ -28,13 +28,13 @@ create-react-app 是官方提供的工程化方案，集成常用的配置工具
     ├── README.md
     └── yarn.lock
 
-#### 创建工程
+### 创建工程
 
     npx create-react-app my-app
     npx react-scripts my-app
     react-scripts
 
-#### 环境变量配置
+### 环境变量配置
 
 <https://create-react-app.dev/docs/adding-custom-environment-variables#adding-temporary-environment-variables-in-your-shell>
 
@@ -42,3 +42,5 @@ create-react-app 是官方提供的工程化方案，集成常用的配置工具
 2. mac Shell配置
 
 `REACT_APP_NOT_SECRET_CODE=abcdef npm start`
+
+###
