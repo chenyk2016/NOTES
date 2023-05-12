@@ -75,3 +75,14 @@
 ## npm安装github包
 
 npm install git+https://xieyufang@gitlab.innotechx.com/x/report-wxa.git
+
+
+## 发布包
+
+看npm的registry
+npm config get registry
+
+
+## 本地调试npm包
+
+https://github.com/wclr/yalc
