@@ -18,4 +18,9 @@ yalc push
 #更新yalc依赖资源，不加包名，更新所有
 yalc update ma-package
 
+# 删除
+yalc remove my-package
+
+# 删除 all
+yalc remove --all
 ```

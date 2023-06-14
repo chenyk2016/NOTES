@@ -40,6 +40,14 @@
     npm config set registry https://registry.npm.taobao.org --global
     npm config set disturl https://npm.taobao.org/dist --global
 
+    // 新的淘宝镜像
+    npm config set registry https://registry.npmmirror.com --global
+    npm config set disturl https://npmmirror.com/mirrors/node --global
+
+
+    // 镜像资源地址
+    https://registry.npmmirror.com/binary.html
+
     // 查看设置
     npm config get registry
     npm config get disturl

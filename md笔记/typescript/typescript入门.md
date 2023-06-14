@@ -13,6 +13,7 @@
 
 [采用策略模式书写ts友好的react组件](https://juejin.cn/post/7044753804427788318)
 
+[ts报错处理办法](https://juejin.cn/post/6844903892094812173)
 
 ## 关闭检查
 
