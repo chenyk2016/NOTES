@@ -24,3 +24,10 @@ yalc remove my-package
 # 删除 all
 yalc remove --all
 ```
+
+
+## 注意⚠️
+
+yalc安装包时，不会安装依赖的node_modules.
+
+所以最好先用npm安装一次包，然后再使用yalc安装本地包
